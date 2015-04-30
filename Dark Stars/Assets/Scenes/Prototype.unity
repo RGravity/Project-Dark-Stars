@@ -854,7 +854,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d35a228556698244a8c6b357acbbdfa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spaceShip: {fileID: 100100000, guid: 2041e4a780dbbe54aaf3d3332d2be868, type: 2}
+  spaceShip: {fileID: 112858, guid: 9ea187e892e97e54f8ea74cf02897813, type: 2}
   spaceShipEnemiesList:
   - {fileID: 0}
   - {fileID: 0}
