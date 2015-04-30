@@ -91,12 +91,4 @@ public class PlayerController : MonoBehaviour {
 
         transform.Rotate(shipRot.x * Time.fixedDeltaTime, (shipRot.y * Mathf.Abs(shipRot.y) * .02f) * Time.fixedDeltaTime, shipRot.z * Time.fixedDeltaTime);
     }
-
-    void Mining()
-    {
-        if (Input.GetMouseButton(0))
-        {
-            
-        }
-    }
 }
