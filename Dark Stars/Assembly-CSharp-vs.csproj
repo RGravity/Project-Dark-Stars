@@ -46,6 +46,8 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\AsteroidScript.cs" />
+     <Compile Include="Assets\Scripts\MineralScript.cs" />
      <Compile Include="Assets\Scripts\MiningLaserScript.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\SpawnPlayerEnemiesAsteroids.cs" />
