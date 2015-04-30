@@ -3,11 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class SpawnPlayerEnemiesAsteroids : MonoBehaviour {
-
-    //parent of all the gameobjects instantiated
     
-
-
+    private bool _spawnNewAsteroid = false;
+    public bool SpawnNewAsteroid { set { _spawnNewAsteroid = value; } }
     //Player
     public GameObject parentSpaceShip;
     public Object spaceShip;
