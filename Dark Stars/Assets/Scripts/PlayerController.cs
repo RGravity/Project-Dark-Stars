@@ -2,111 +2,101 @@
 using System.Collections;
 
 public class PlayerController : MonoBehaviour {
+    
+    //speed stuff
+    float speed;
+    public int cruiseSpeed;
+    float deltaSpeed;//(speed - cruisespeed)
+    public int minSpeed;
+    public int maxSpeed;
+    float accel, decel;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        Move();
-	}
+    //turning stuff
+    Vector3 angVel;
+    Vector3 shipRot;
+    public int sensitivity;
 
-    void Move()
+    public Vector3 cameraOffset;
+
+    void Start()
     {
-        if (Input.GetKey(KeyCode.W))
+        speed = cruiseSpeed;
+    }
+
+    void FixedUpdate()
+    {
+        Movement();
+    }
+
+    void Movement()
+    {
+        shipRot = transform.GetChild(1).localEulerAngles;
+
+        if (shipRot.x > 180) shipRot.x -= 360;
+        if (shipRot.y > 180) shipRot.y -= 360;
+        if (shipRot.z > 180) shipRot.z -= 360;
+
+        angVel.x += Input.GetAxis("Vertical") * Mathf.Abs(Input.GetAxis("Vertical")) * sensitivity * Time.fixedDeltaTime;
+
+        float turn = Input.GetAxis("Horizontal") * Mathf.Abs(Input.GetAxis("Horizontal")) * sensitivity * Time.fixedDeltaTime;
+        angVel.y += turn * .5f;
+        angVel.z -= turn * .5f;
+
+        if (Input.GetKey(KeyCode.Joystick1Button4) || Input.GetKey(KeyCode.I))
         {
-            //--Vector3 forward = Vector3.forward; //0,0,1
-            Vector3 forward = gameObject.transform.forward; //its the forward in which the character is pointing at.
-
-            //--Add the Forward vector to the position
-            forward = forward * 0.1f; //--Needs floats
-            Vector3 maxforward = forward * 10;
-
-            //--Apply the change
-            gameObject.GetComponent<Rigidbody>().velocity += forward;
-
-            if (gameObject.GetComponent<Rigidbody>().velocity == maxforward)
-            {
-                gameObject.GetComponent<Rigidbody>().velocity = maxforward;
-            }
-        }
-        else if(Input.GetKey(KeyCode.S))
-        {
-            Vector3 reverse = gameObject.transform.forward;
-
-            reverse = reverse * 0.1f; //--Needs floats
-
-            Vector3 maxreverse = reverse * 5;
-
-            gameObject.GetComponent<Rigidbody>().velocity -= reverse;
-
-            if (gameObject.GetComponent<Rigidbody>().velocity == maxreverse)
-            {
-                gameObject.GetComponent<Rigidbody>().velocity = maxreverse;
-            }
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            Vector3 leftThrust = gameObject.transform.right;
-
-            leftThrust = leftThrust * 0.1f; //--Needs floats
-
-            Vector3 maxleftThrust = leftThrust * 5;
-
-            gameObject.GetComponent<Rigidbody>().velocity -= leftThrust;
-
-            if (gameObject.GetComponent<Rigidbody>().velocity == maxleftThrust)
-            {
-                gameObject.GetComponent<Rigidbody>().velocity = maxleftThrust;
-            }
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            //--Vector3 forward = Vector3.forward; //0,0,1
-            Vector3 rightThrust = gameObject.transform.right; //its the forward in which the character is pointing at.
-
-            //--Add the Forward vector to the position
-            rightThrust = rightThrust * 0.1f; //--Needs floats
-            Vector3 maxrightThrust = rightThrust * 10;
-
-            //--Apply the change
-            gameObject.GetComponent<Rigidbody>().velocity += rightThrust;
-
-            if (gameObject.GetComponent<Rigidbody>().velocity == maxrightThrust)
-            {
-                gameObject.GetComponent<Rigidbody>().velocity = maxrightThrust;
-            }
-        }
-        else
-        {
-            gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            angVel.y -= 20;
+            angVel.z += 50;
+            speed -= 5 * Time.fixedDeltaTime;
         }
 
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.Joystick1Button5) || Input.GetKey(KeyCode.O))
         {
-            transform.Rotate(0, -1, 0);
+            angVel.y += 20;
+            angVel.z -= 50;
+            speed -= 5 * Time.fixedDeltaTime;
         }
-        if (Input.GetKey(KeyCode.RightArrow))
+
+        angVel /= 1 + deltaSpeed * .001f;
+
+        angVel -= angVel.normalized * angVel.sqrMagnitude * .08f * Time.fixedDeltaTime;
+
+        transform.GetChild(1).Rotate(angVel * Time.fixedDeltaTime);
+
+        transform.GetChild(1).Rotate(-shipRot.normalized * .015f * (shipRot.sqrMagnitude + 500) * (1 + speed / maxSpeed) * Time.fixedDeltaTime);
+
+        deltaSpeed = speed - cruiseSpeed;
+
+        decel = speed - minSpeed;
+        accel = maxSpeed - speed;
+
+        if (Input.GetKey(KeyCode.Joystick1Button1) || Input.GetKey(KeyCode.LeftShift))
+            speed += accel * Time.fixedDeltaTime;
+        else if (Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKey(KeyCode.Space))
+            speed -= decel * Time.fixedDeltaTime;
+
+        else if (Mathf.Abs(deltaSpeed) > .1f)
+            speed -= Mathf.Clamp(deltaSpeed * Mathf.Abs(deltaSpeed), -30, 100) * Time.fixedDeltaTime;
+
+
+        transform.GetChild(0).localPosition = cameraOffset + new Vector3(0, 0, -deltaSpeed * .02f);
+
+
+        float sqrOffset = transform.GetChild(1).localPosition.sqrMagnitude;
+        Vector3 offsetDir = transform.GetChild(1).localPosition.normalized;
+
+
+        transform.GetChild(1).Translate(-offsetDir * sqrOffset * 20 * Time.fixedDeltaTime);
+
+        transform.Translate((offsetDir * sqrOffset * 50 + transform.GetChild(1).forward * speed) * Time.fixedDeltaTime, Space.World);
+
+        transform.Rotate(shipRot.x * Time.fixedDeltaTime, (shipRot.y * Mathf.Abs(shipRot.y) * .02f) * Time.fixedDeltaTime, shipRot.z * Time.fixedDeltaTime);
+    }
+
+    void Mining()
+    {
+        if (Input.GetMouseButton(0))
         {
-            transform.Rotate(0, 1, 0);
-        }
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            transform.Rotate(1, 0, 0);
-        }
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            transform.Rotate(-1, 0, 0);
-        }
-        if (Input.GetKey(KeyCode.Q))
-        {
-            transform.Rotate(0, 0, 1);
-        }
-        if (Input.GetKey(KeyCode.E))
-        {
-            transform.Rotate(0, 0, -1);
+            
         }
     }
 }
