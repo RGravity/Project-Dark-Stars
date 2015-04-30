@@ -161,5 +161,7 @@ public class SpawnPlayerEnemiesAsteroids : MonoBehaviour {
         go.transform.parent = parentAsteroids.transform;
         go.name = "Asteroid" + _numberOfAsteroids;
         _numberOfAsteroids++;
+
+        _spawnNewAsteroid = false;
     }
 }
