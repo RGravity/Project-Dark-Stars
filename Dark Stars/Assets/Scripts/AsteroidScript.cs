@@ -68,6 +68,6 @@ public class AsteroidScript : MonoBehaviour {
     void SpawnNewAsteroid()
     {
         ////TODO: Communicate to Michiel's Script to Spawn 1 new Asteroid somewhere...
-        //GameObject.Find("Main").GetComponent<SpawnPlayerEnemiesAsteroids>().SpawnAsteroid = true;
+        GameObject.Find("Main").GetComponent<SpawnPlayerEnemiesAsteroids>().SpawnNewAsteroid = true;
     }
 }
