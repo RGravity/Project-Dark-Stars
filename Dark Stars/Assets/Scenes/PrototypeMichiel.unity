@@ -147,6 +147,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2101569826}
   m_RootOrder: 0
+--- !u!1 &1075670747
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1075670748}
+  m_Layer: 0
+  m_Name: Enemies
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1075670748
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1075670747}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -45.740921, y: 4.38540554, z: 119.895706}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2101569826}
+  m_RootOrder: 2
 --- !u!1 &1603612045
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,6 +229,7 @@ Transform:
   m_Children:
   - {fileID: 811674563}
   - {fileID: 1603612046}
+  - {fileID: 1075670748}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!114 &2101569827
@@ -218,8 +246,8 @@ MonoBehaviour:
   parentSpaceShip: {fileID: 2101569825}
   spaceShip: {fileID: 126106, guid: 13ccbd372f1c8ee4b8afee8d4fb4bc5c, type: 2}
   parentAsteroids: {fileID: 1603612045}
-  amountOfAsteroids: 30
-  MinDistanceToPlayer: 30
+  amountOfAsteroids: 1000
+  MinDistanceToPlayer: 95
   MaxDistanceToPlayer: 100
   AsteroidsList:
   - {fileID: 119130, guid: c9e25c6723ce4824baf26b242c040cbc, type: 2}
