@@ -29,7 +29,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 486998}
   - 120: {fileID: 12055252}
-  - 114: {fileID: 11485166}
   m_Layer: 0
   m_Name: GunTip
   m_TagString: Untagged
@@ -153,18 +152,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11485166
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 149164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f290bd93cac4be044b0b7f8f5e57a498, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LaserDistance: 100
 --- !u!120 &12055252
 LineRenderer:
   m_ObjectHideFlags: 1
