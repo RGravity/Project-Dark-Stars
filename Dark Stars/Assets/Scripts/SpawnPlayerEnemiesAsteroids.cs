@@ -54,54 +54,68 @@ public class SpawnPlayerEnemiesAsteroids : MonoBehaviour {
             float asteroidX = 0;
             float asteroidY = 0;
             float asteroidZ = 0;
-            int positiveORnegative = 0;
+            Vector3 AsteroidPosition = new Vector3(asteroidX, asteroidY, asteroidZ);
+            float lengthAsteroidToSpaceship = 0;
 
-            // 0 = positive , 1 = negative
-            positiveORnegative = Random.Range(0, 2);
-            switch (positiveORnegative)
+            do
             {
-                case 0:
-                    asteroidX = spaceShipPosition.x + Random.Range(MinDistanceToPlayer, MaxDistanceToPlayer);
-                    break;
-                case 1:
-                    asteroidX = spaceShipPosition.x + Random.Range(-MaxDistanceToPlayer, -MinDistanceToPlayer);
-                    break;
-                default:
-                    break;
-            }
 
-            // 0 = positive , 1 = negative
-            positiveORnegative = Random.Range(0, 2);
-            switch (positiveORnegative)
-            {
-                case 0:
-                    asteroidY = spaceShipPosition.x + Random.Range(MinDistanceToPlayer, MaxDistanceToPlayer);
-                    break;
-                case 1:
-                    asteroidY = spaceShipPosition.x + Random.Range(-MaxDistanceToPlayer, -MinDistanceToPlayer);
-                    break;
-                default:
-                    break;
-            }
 
-            // 0 = positive , 1 = negative
-            positiveORnegative = Random.Range(0, 2);
-            switch (positiveORnegative)
-            {
-                case 0:
-                    asteroidZ = spaceShipPosition.x + Random.Range(MinDistanceToPlayer, MaxDistanceToPlayer);
-                    break;
-                case 1:
-                    asteroidZ = spaceShipPosition.x + Random.Range(-MaxDistanceToPlayer, -MinDistanceToPlayer);
-                    break;
-                default:
-                    break;
-            }
+                
+                int positiveORnegative = 0;
 
+                // 0 = positive , 1 = negative
+                positiveORnegative = Random.Range(0, 2);
+                switch (positiveORnegative)
+                {
+                    case 0:
+                        asteroidX = spaceShipPosition.x + Random.Range(0, MaxDistanceToPlayer);
+                        break;
+                    case 1:
+                        asteroidX = spaceShipPosition.x + Random.Range(-MaxDistanceToPlayer, 0);
+                        break;
+                    default:
+                        break;
+                }
+
+                // 0 = positive , 1 = negative
+                positiveORnegative = Random.Range(0, 2);
+                switch (positiveORnegative)
+                {
+                    case 0:
+                        asteroidY = spaceShipPosition.x + Random.Range(0, MaxDistanceToPlayer);
+                        break;
+                    case 1:
+                        asteroidY = spaceShipPosition.x + Random.Range(-MaxDistanceToPlayer, 0);
+                        break;
+                    default:
+                        break;
+                }
+
+                // 0 = positive , 1 = negative
+                positiveORnegative = Random.Range(0, 2);
+                switch (positiveORnegative)
+                {
+                    case 0:
+                        asteroidZ = spaceShipPosition.x + Random.Range(0, MaxDistanceToPlayer);
+                        break;
+                    case 1:
+                        asteroidZ = spaceShipPosition.x + Random.Range(-MaxDistanceToPlayer, 0);
+                        break;
+                    default:
+                        break;
+                }
+
+                AsteroidPosition = new Vector3(asteroidX, asteroidY, asteroidZ);
+                Vector3 DistanceAsteroidToSpaceship = AsteroidPosition - spaceShipPosition;
+                lengthAsteroidToSpaceship = DistanceAsteroidToSpaceship.magnitude;
+
+            } while (lengthAsteroidToSpaceship < MaxDistanceToPlayer);
 
             GameObject go = (GameObject)Instantiate(AsteroidsList[Random.Range(0, AsteroidsList.Count)], new Vector3(asteroidX, asteroidY, asteroidZ), Quaternion.identity);
             go.transform.parent = parentAsteroids.transform;
             go.name = "Asteroid" + _numberOfAsteroids;
+            
             _numberOfAsteroids++;
         }
     }
@@ -163,5 +177,10 @@ public class SpawnPlayerEnemiesAsteroids : MonoBehaviour {
         _numberOfAsteroids++;
 
         _spawnNewAsteroid = false;
+    }
+
+    void SpawnEnemyShips()
+    {
+
     }
 }
