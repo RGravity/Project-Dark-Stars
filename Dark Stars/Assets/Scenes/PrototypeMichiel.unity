@@ -257,9 +257,9 @@ MonoBehaviour:
   - {fileID: 180450, guid: 0efb0659bb0be5645ba6f6bf85018c25, type: 2}
   - {fileID: 120878, guid: d9f6fd82256b0a84d9e9bede19d5cdcc, type: 2}
   - {fileID: 100668, guid: 66e1d1276a4467d44846a904b8f38578, type: 2}
-  parentSpaceShipEnemies: {fileID: 0}
-  amountOfEnemies: 2
+  parentSpaceShipEnemies: {fileID: 1075670747}
+  amountOfEnemies: 500
   spaceShipEnemiesList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 186208, guid: a32550bbf55a3a246919d5cdbb4d16fe, type: 2}
+  - {fileID: 177798, guid: 1eeea2f5bc9560948b41bbe252e0ccc5, type: 2}
+  - {fileID: 139672, guid: 1c88d55e52745004293f954fcfa6a4a2, type: 2}
