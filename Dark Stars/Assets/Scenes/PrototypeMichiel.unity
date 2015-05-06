@@ -260,6 +260,6 @@ MonoBehaviour:
   parentSpaceShipEnemies: {fileID: 1075670747}
   amountOfEnemies: 5
   spaceShipEnemiesList:
-  - {fileID: 157524, guid: a32550bbf55a3a246919d5cdbb4d16fe, type: 2}
-  - {fileID: 104924, guid: 1eeea2f5bc9560948b41bbe252e0ccc5, type: 2}
-  - {fileID: 147094, guid: 1c88d55e52745004293f954fcfa6a4a2, type: 2}
+  - {fileID: 137320, guid: a32550bbf55a3a246919d5cdbb4d16fe, type: 2}
+  - {fileID: 146902, guid: 1eeea2f5bc9560948b41bbe252e0ccc5, type: 2}
+  - {fileID: 107464, guid: 1c88d55e52745004293f954fcfa6a4a2, type: 2}

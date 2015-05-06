@@ -13,10 +13,6 @@ public class EnemyScript : MonoBehaviour {
 
     GameObject[] boids;
 
-    //ForShooting
-    LineRenderer line;
-    public int LaserDistance = 100;
-
 	// Use this for initialization
 	void Start () {
          boids = GameObject.FindGameObjectsWithTag("Enemy");
