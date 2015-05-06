@@ -8,7 +8,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 440840}
-  - 114: {fileID: 11411146}
   m_Layer: 0
   m_Name: Enemy2
   m_TagString: Enemy
@@ -29,6 +28,7 @@ GameObject:
   - 95: {fileID: 9554524}
   - 135: {fileID: 13585576}
   - 54: {fileID: 5400482}
+  - 114: {fileID: 11445116}
   m_Layer: 0
   m_Name: SpaceshipEnemy0
   m_TagString: Untagged
@@ -46,7 +46,7 @@ GameObject:
   - 4: {fileID: 489878}
   - 120: {fileID: 12002020}
   m_Layer: 0
-  m_Name: GunTip
+  m_Name: GunTip Enemy2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -153,18 +153,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11411146
+--- !u!114 &11445116
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 147094}
+  m_GameObject: {fileID: 150036}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f38b491bd809fd479b25122d819daea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 126106, guid: 13ccbd372f1c8ee4b8afee8d4fb4bc5c, type: 2}
+  LaserDistance: 100
 --- !u!120 &12002020
 LineRenderer:
   m_ObjectHideFlags: 1
