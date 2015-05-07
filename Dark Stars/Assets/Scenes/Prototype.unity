@@ -360,6 +360,33 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b419025d5b645f64fb37c5f7b8b2d10b, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &1321645092
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1321645093}
+  m_Layer: 0
+  m_Name: Enemies
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1321645093
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1321645092}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.52804756, y: 4.42233181, z: 77.02314}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2101569826}
+  m_RootOrder: 1
 --- !u!1 &1603612045
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,7 +416,7 @@ Transform:
   - {fileID: 694287973}
   - {fileID: 444062692}
   m_Father: {fileID: 2101569826}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!1001 &1743244011
 Prefab:
   m_ObjectHideFlags: 0
@@ -525,6 +552,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 811674563}
+  - {fileID: 1321645093}
   - {fileID: 1603612046}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -553,9 +581,9 @@ MonoBehaviour:
   - {fileID: 180450, guid: 0efb0659bb0be5645ba6f6bf85018c25, type: 2}
   - {fileID: 120878, guid: d9f6fd82256b0a84d9e9bede19d5cdcc, type: 2}
   - {fileID: 100668, guid: 66e1d1276a4467d44846a904b8f38578, type: 2}
-  parentSpaceShipEnemies: {fileID: 0}
-  amountOfEnemies: 2
+  parentSpaceShipEnemies: {fileID: 1321645092}
+  amountOfEnemies: 5
   spaceShipEnemiesList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 157524, guid: a32550bbf55a3a246919d5cdbb4d16fe, type: 2}
+  - {fileID: 104924, guid: 1eeea2f5bc9560948b41bbe252e0ccc5, type: 2}
+  - {fileID: 147094, guid: 1c88d55e52745004293f954fcfa6a4a2, type: 2}
