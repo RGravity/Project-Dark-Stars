@@ -38,12 +38,12 @@ public class AsteroidScript : MonoBehaviour {
 
     void SpawnMineral()
     {
-        //GameObject.Find("Main").GetComponent<SpawnPlayerEnemiesAsteroids>().SpawnNewMineral = true;
-        //GameObject.Find("Main").GetComponent<SpawnPlayerEnemiesAsteroids>().SpawnMineralAt = transform;
+        GameObject.Find("Main").GetComponent<MainScript>().SpawnNewMineral = true;
+        GameObject.Find("Main").GetComponent<MainScript>().SpawnNewMineralTransform = transform;
     }
 
     void SpawnNewAsteroid()
     {
-        GameObject.Find("Main").GetComponent<SpawnPlayerEnemiesAsteroids>().SpawnNewAsteroid = true;
+        GameObject.Find("Main").GetComponent<MainScript>().SpawnNewAsteroid = true;
     }
 }
