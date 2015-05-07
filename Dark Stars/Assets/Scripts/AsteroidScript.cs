@@ -6,7 +6,6 @@ public class AsteroidScript : MonoBehaviour {
 
     public bool Hit = false;
     public int HP = 100;
-    public List<Object> Minerals = new List<Object>();
 
 	// Use this for initialization
 	void Start () {
