@@ -11,10 +11,8 @@ public class MainScript : MonoBehaviour
     private bool _spawnNewEnemyship = false;
     public bool SpawnNewEnemyship { set { _spawnNewEnemyship = value; } }
 
-    private bool _spawnNewMineral = false;
-    public bool SpawnNewMineral { set { _spawnNewMineral = value; } }
-    private Transform _spawnNewMineralTransform;
-    public Transform SpawnNewMineralTransform { set { _spawnNewMineralTransform = value; } }
+    private GameObject _asteroidToDestroy;
+    public GameObject AsteroidToDestroy { set { _asteroidToDestroy = value; } }
 
     //Player
     public GameObject parentSpaceShip;
@@ -62,7 +60,7 @@ public class MainScript : MonoBehaviour
             SpawnEnemyShip();
         }
 
-        if (_spawnNewMineral)
+        if (_asteroidToDestroy != null)
         {
             SpawnMineral();
         }
@@ -426,7 +424,9 @@ public class MainScript : MonoBehaviour
             //Mineral1
             ObjectToSpawn = mineralsList[0];
         }
-        GameObject go = (GameObject)Instantiate(ObjectToSpawn, _spawnNewMineralTransform.position, _spawnNewMineralTransform.rotation);
+        GameObject go = (GameObject)Instantiate(ObjectToSpawn, _asteroidToDestroy.transform.position, _asteroidToDestroy.transform.rotation);
         go.transform.localScale = new Vector3(2, 2, 2);
+
+        _asteroidToDestroy = null;
     }
 }
