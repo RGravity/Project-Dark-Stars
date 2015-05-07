@@ -35,7 +35,9 @@ public class MainScript : MonoBehaviour
     private List<string> enemySpaceshipsInSpaceList = new List<string>();
 
     //Minerals
+    public GameObject parentMinerals;
     public List<Object> mineralsList = new List<Object>();
+    private int _numberOfMinerals = 0;
 
 
 
@@ -402,7 +404,6 @@ public class MainScript : MonoBehaviour
     void SpawnMineral()
     {
         int rnd = Random.Range(0, 54);
-        string name = "";
         Object ObjectToSpawn;
         if (rnd > 49)
         {
@@ -426,6 +427,12 @@ public class MainScript : MonoBehaviour
         }
         GameObject go = (GameObject)Instantiate(ObjectToSpawn, _asteroidToDestroy.transform.position, _asteroidToDestroy.transform.rotation);
         go.transform.localScale = new Vector3(2, 2, 2);
+        go.transform.parent = parentSpaceShipEnemies.transform;
+        go.name = "Mineral" + _numberOfMinerals;
+        AsteroidsInSpaceList.Remove(_asteroidToDestroy.name);
+        Destroy(_asteroidToDestroy);
+
+        _numberOfMinerals++;
 
         _asteroidToDestroy = null;
     }
