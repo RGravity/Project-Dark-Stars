@@ -4,8 +4,11 @@ using System.Collections.Generic;
 
 public class AsteroidScript : MonoBehaviour {
 
-    public bool Hit = false;
+    private bool _hit = false;
     public int HP = 100;
+
+    public bool Hit { set { _hit = value; } }
+    
 
 	// Use this for initialization
 	void Start () {
@@ -19,7 +22,7 @@ public class AsteroidScript : MonoBehaviour {
 
     void CheckHit()
     {
-        if (Hit)
+        if (_hit)
         {
             HP--;
             Debug.Log("HP is lowered to: " + HP);
@@ -28,17 +31,14 @@ public class AsteroidScript : MonoBehaviour {
             {
                 Debug.Log("Asteroid Destroyed");
                 SpawnMineral();
-
                 SpawnNewAsteroid();
-                Destroy(gameObject);
             }
         }
     }
 
     void SpawnMineral()
     {
-        GameObject.Find("Main").GetComponent<MainScript>().SpawnNewMineral = true;
-        GameObject.Find("Main").GetComponent<MainScript>().SpawnNewMineralTransform = transform;
+        GameObject.Find("Main").GetComponent<MainScript>().AsteroidToDestroy = gameObject;
     }
 
     void SpawnNewAsteroid()
