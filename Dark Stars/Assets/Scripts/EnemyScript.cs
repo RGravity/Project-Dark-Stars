@@ -5,7 +5,7 @@ using System.Collections;
 
 public class EnemyScript : MonoBehaviour {
 
-    EnumEnemyShipType Shiptype;
+    public EnumEnemyShipType Shiptype;
 
     public GameObject target;
 

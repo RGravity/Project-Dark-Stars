@@ -15,8 +15,8 @@ public class MainScript : MonoBehaviour
     private bool _spawnNewAsteroid = false;
     public bool SpawnNewAsteroid { set { _spawnNewAsteroid = value; } }
 
-    private bool _spawnNewEnemyship = false;
-    public bool SpawnNewEnemyship { set { _spawnNewEnemyship = value; } }
+    private GameObject _spawnNewEnemyship;
+    public GameObject SpawnNewEnemyship { set { _spawnNewEnemyship = value; } }
 
     private GameObject _asteroidToDestroy;
     public GameObject AsteroidToDestroy { set { _asteroidToDestroy = value; } }
@@ -64,9 +64,9 @@ public class MainScript : MonoBehaviour
             SpawnAsteroid();
         }
 
-        if (_spawnNewEnemyship)
+        if (_spawnNewEnemyship != null)
         {
-            //SpawnEnemyShips();
+            SpawnEnemyShips(_spawnNewEnemyship.GetComponent<EnemyScript>().Shiptype, 1);
         }
 
         if (_asteroidToDestroy != null)
@@ -335,6 +335,7 @@ public class MainScript : MonoBehaviour
                     go = (GameObject)Instantiate(enemySpaceshipsList[0], new Vector3(enemyX, enemyY, enemyZ), Quaternion.identity);
                     go.transform.parent = parentSpaceShipEnemies.transform;
                     go.name = EnumEnemyShipType.speeder + "Enemy" + _numberOfEnemies;
+                    //go.GetComponent<EnemyScript>().Shiptype
                     break;
                 case 1:
                     go = (GameObject)Instantiate(enemySpaceshipsList[0], new Vector3(enemyX, enemyY, enemyZ), Quaternion.identity);
@@ -444,7 +445,7 @@ public class MainScript : MonoBehaviour
 
 
             _numberOfEnemies++;
-            _spawnNewEnemyship = false;
+            _spawnNewEnemyship = null;
         }
     }
 
