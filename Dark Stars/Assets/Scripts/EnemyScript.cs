@@ -5,6 +5,8 @@ using System.Collections;
 
 public class EnemyScript : MonoBehaviour {
 
+    EnumEnemyShipType Shiptype;
+
     public GameObject target;
 
     Vector3 acceleration;
