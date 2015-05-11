@@ -87,6 +87,52 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &120934393
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 2986cec5d941b3a4fa516fd76cb5263d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -50.0243835
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 2986cec5d941b3a4fa516fd76cb5263d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -103.469513
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 2986cec5d941b3a4fa516fd76cb5263d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -417.534119
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 2986cec5d941b3a4fa516fd76cb5263d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 2986cec5d941b3a4fa516fd76cb5263d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 2986cec5d941b3a4fa516fd76cb5263d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 2986cec5d941b3a4fa516fd76cb5263d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 2986cec5d941b3a4fa516fd76cb5263d, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 2986cec5d941b3a4fa516fd76cb5263d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3ceadbe1e0fb5f347a3445286d8cd6f5, type: 2}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 2986cec5d941b3a4fa516fd76cb5263d, type: 3}
+  m_IsPrefabParent: 0
 --- !u!1 &811674561
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,7 +305,7 @@ Transform:
   - {fileID: 1603612046}
   - {fileID: 1440647727}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!114 &2101569827
 MonoBehaviour:
   m_ObjectHideFlags: 0
