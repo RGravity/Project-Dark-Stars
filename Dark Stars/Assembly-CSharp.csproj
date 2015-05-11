@@ -49,6 +49,8 @@
      <Compile Include="Assets\Scripts\AsteroidScript.cs" />
      <Compile Include="Assets\Scripts\EnemyLaserScript.cs" />
      <Compile Include="Assets\Scripts\EnemyScript.cs" />
+     <Compile Include="Assets\Scripts\Level Editor Framework\LevelEditorMain.cs" />
+     <Compile Include="Assets\Scripts\Level Editor Framework\LevelEditorScript.cs" />
      <Compile Include="Assets\Scripts\MainScript.cs" />
      <Compile Include="Assets\Scripts\MineralScript.cs" />
      <Compile Include="Assets\Scripts\MiningLaserScript.cs" />
