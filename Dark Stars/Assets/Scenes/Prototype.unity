@@ -25,7 +25,7 @@ RenderSettings:
   m_AmbientGroundColor: {r: .0469999984, g: .0430000015, b: .0350000001, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 0
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 66aa1f2cdef32ec4ba06c44b1fcc34ed, type: 2}
   m_HaloStrength: .5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -272,21 +272,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentSpaceShip: {fileID: 2101569825}
-  spaceShip: {fileID: 126106, guid: 13ccbd372f1c8ee4b8afee8d4fb4bc5c, type: 2}
+  spaceShip: {fileID: 151162, guid: 13ccbd372f1c8ee4b8afee8d4fb4bc5c, type: 2}
   parentAsteroids: {fileID: 1603612045}
-  amountOfAsteroids: 15
+  amountOfAsteroids: 250
   MinDistanceToPlayer: 1
-  MaxDistanceToPlayer: 50
+  MaxDistanceToPlayer: 500
   AsteroidsList:
-  - {fileID: 119130, guid: c9e25c6723ce4824baf26b242c040cbc, type: 2}
-  - {fileID: 113602, guid: 7070715108eead64ba026f980cd62ddf, type: 2}
-  - {fileID: 192944, guid: ed4cb3a4393804347975372bea0daa7e, type: 2}
-  - {fileID: 186044, guid: 8dd2b025349e51941a95f6941df604f4, type: 2}
-  - {fileID: 180450, guid: 0efb0659bb0be5645ba6f6bf85018c25, type: 2}
-  - {fileID: 120878, guid: d9f6fd82256b0a84d9e9bede19d5cdcc, type: 2}
-  - {fileID: 100668, guid: 66e1d1276a4467d44846a904b8f38578, type: 2}
+  - {fileID: 142436, guid: c9e25c6723ce4824baf26b242c040cbc, type: 2}
+  - {fileID: 136796, guid: 7070715108eead64ba026f980cd62ddf, type: 2}
+  - {fileID: 181036, guid: ed4cb3a4393804347975372bea0daa7e, type: 2}
+  - {fileID: 171380, guid: 8dd2b025349e51941a95f6941df604f4, type: 2}
+  - {fileID: 145636, guid: 0efb0659bb0be5645ba6f6bf85018c25, type: 2}
   parentSpaceShipEnemies: {fileID: 1321645092}
-  amountOfEnemies: 2
+  amountOfEnemies: 5
   enemySpaceshipsList:
   - {fileID: 137320, guid: a32550bbf55a3a246919d5cdbb4d16fe, type: 2}
   - {fileID: 146902, guid: 1eeea2f5bc9560948b41bbe252e0ccc5, type: 2}

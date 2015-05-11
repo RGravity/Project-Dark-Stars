@@ -53,6 +53,12 @@ public class EnemyLaserScript : MonoBehaviour {
                         GameObject asteroidHit = GameObject.Find(hit.collider.gameObject.name);
                         asteroidHit.GetComponent<AsteroidScript>().Hit = true;
                     }
+                    else if (hit.collider.gameObject.name.Contains("Player"))
+                    {
+                        hit.rigidbody.AddForceAtPosition(transform.forward * 10, hit.point);
+                        GameObject playerHit = GameObject.Find("SpaceShip");
+                        playerHit.GetComponent<PlayerController>().Hit = true;
+                    }
                 }
             }
             else
