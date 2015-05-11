@@ -43,6 +43,12 @@ public class MiningLaserScript : MonoBehaviour {
                         GameObject asteroidHit = GameObject.Find(hit.collider.gameObject.name);
                         asteroidHit.GetComponent<AsteroidScript>().Hit = true;
                     }
+                    else if (hit.collider.gameObject.name.Contains("Enemy"))
+                    {
+                        hit.rigidbody.AddForceAtPosition(transform.forward * 10, hit.point);
+                        GameObject enemyHit = GameObject.Find(hit.collider.gameObject.name);
+                        enemyHit.GetComponent<EnemyScript>().Hit = true;
+                    }
                 }
             }
             else

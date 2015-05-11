@@ -15,8 +15,13 @@ public class PlayerController : MonoBehaviour {
     Vector3 angVel;
     Vector3 shipRot;
     public int sensitivity;
-
     public Vector3 cameraOffset;
+
+    //HP
+    private bool _hit = false;
+    public int HP = 100;
+
+    public bool Hit { set { _hit = value; } }
 
     void Start()
     {
@@ -26,6 +31,7 @@ public class PlayerController : MonoBehaviour {
     void FixedUpdate()
     {
         Movement();
+        CheckHit();
     }
 
     void Movement()
@@ -90,5 +96,19 @@ public class PlayerController : MonoBehaviour {
         transform.Translate((offsetDir * sqrOffset * 50 + transform.GetChild(1).forward * speed) * Time.fixedDeltaTime, Space.World);
 
         transform.Rotate(shipRot.x * Time.fixedDeltaTime, (shipRot.y * Mathf.Abs(shipRot.y) * .02f) * Time.fixedDeltaTime, shipRot.z * Time.fixedDeltaTime);
+    }
+
+    void CheckHit()
+    {
+        if (_hit)
+        {
+            HP--;
+            Debug.Log("Your HP is lowered to: " + HP);
+            Hit = false;
+            if (HP <= 0)
+            {
+                Debug.Log("Your Killed");
+            }
+        }
     }
 }
