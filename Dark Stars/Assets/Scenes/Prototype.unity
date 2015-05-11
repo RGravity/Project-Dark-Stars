@@ -240,15 +240,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2101569825}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d35a228556698244a8c6b357acbbdfa9, type: 3}
+  m_Script: {fileID: 11500000, guid: cb81bc1fef373c44eb300ddbdd5de7f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   parentSpaceShip: {fileID: 2101569825}
   spaceShip: {fileID: 126106, guid: 13ccbd372f1c8ee4b8afee8d4fb4bc5c, type: 2}
   parentAsteroids: {fileID: 1603612045}
-  amountOfAsteroids: 50
-  MinDistanceToPlayer: 1
-  MaxDistanceToPlayer: 25
+  amountOfAsteroids: 10
+  MinDistanceToPlayer: 30
+  MaxDistanceToPlayer: 100
   AsteroidsList:
   - {fileID: 119130, guid: c9e25c6723ce4824baf26b242c040cbc, type: 2}
   - {fileID: 113602, guid: 7070715108eead64ba026f980cd62ddf, type: 2}
@@ -258,8 +258,13 @@ MonoBehaviour:
   - {fileID: 120878, guid: d9f6fd82256b0a84d9e9bede19d5cdcc, type: 2}
   - {fileID: 100668, guid: 66e1d1276a4467d44846a904b8f38578, type: 2}
   parentSpaceShipEnemies: {fileID: 1321645092}
-  amountOfEnemies: 5
-  spaceShipEnemiesList:
+  amountOfEnemies: 2
+  enemySpaceshipsList:
   - {fileID: 137320, guid: a32550bbf55a3a246919d5cdbb4d16fe, type: 2}
   - {fileID: 146902, guid: 1eeea2f5bc9560948b41bbe252e0ccc5, type: 2}
   - {fileID: 107464, guid: 1c88d55e52745004293f954fcfa6a4a2, type: 2}
+  mineralsList:
+  - {fileID: 173178, guid: 92db2354d24863f4daeba236de8dd7bc, type: 2}
+  - {fileID: 186012, guid: 83b14f67ef3d4434c970a764c1132cc1, type: 2}
+  - {fileID: 184982, guid: 9721f021e0878704c8c5e290b06cd055, type: 2}
+  - {fileID: 105350, guid: 62db1642afe2e3648849e3202daefee2, type: 2}
