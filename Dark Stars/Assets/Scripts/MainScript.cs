@@ -187,6 +187,9 @@ public class MainScript : MonoBehaviour
             } while (lengthAsteroidToSpaceship > MaxDistanceToPlayer);
 
             GameObject go = (GameObject)Instantiate(AsteroidsList[Random.Range(0, AsteroidsList.Count)], new Vector3(asteroidX, asteroidY, asteroidZ), Quaternion.identity);
+            float randomScale = Random.Range(0.01f, 2.0f);
+            go.transform.localScale = new Vector3(randomScale, randomScale, randomScale);
+            go.transform.rotation = new Quaternion(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360));
             go.transform.parent = parentAsteroids.transform;
             go.name = "Asteroid" + _numberOfAsteroids;
             AsteroidsInSpaceList.Add(go.name);
@@ -335,22 +338,26 @@ public class MainScript : MonoBehaviour
                     go = (GameObject)Instantiate(enemySpaceshipsList[0], new Vector3(enemyX, enemyY, enemyZ), Quaternion.identity);
                     go.transform.parent = parentSpaceShipEnemies.transform;
                     go.name = EnumEnemyShipType.speeder + "Enemy" + _numberOfEnemies;
-                    //go.GetComponent<EnemyScript>().Shiptype
+                    go.GetComponent<EnemyScript>().Shiptype = EnumEnemyShipType.speeder;
                     break;
                 case 1:
-                    go = (GameObject)Instantiate(enemySpaceshipsList[0], new Vector3(enemyX, enemyY, enemyZ), Quaternion.identity);
+                    go = (GameObject)Instantiate(enemySpaceshipsList[1], new Vector3(enemyX, enemyY, enemyZ), Quaternion.identity);
                     go.transform.parent = parentSpaceShipEnemies.transform;
                     go.name = EnumEnemyShipType.saboteur + "Enemy" + _numberOfEnemies;
+                    go.GetComponent<EnemyScript>().Shiptype = EnumEnemyShipType.saboteur;
                     break;
                 case 2:
-                    go = (GameObject)Instantiate(enemySpaceshipsList[0], new Vector3(enemyX, enemyY, enemyZ), Quaternion.identity);
+                    go = (GameObject)Instantiate(enemySpaceshipsList[2], new Vector3(enemyX, enemyY, enemyZ), Quaternion.identity);
                     go.transform.parent = parentSpaceShipEnemies.transform;
                     go.name = EnumEnemyShipType.bruiser + "Enemy" + _numberOfEnemies;
+                    go.GetComponent<EnemyScript>().Shiptype = EnumEnemyShipType.bruiser;
                     break;
                 default:
-                    go = (GameObject)Instantiate(enemySpaceshipsList[Random.Range(0, enemySpaceshipsList.Count)], new Vector3(enemyX, enemyY, enemyZ), Quaternion.identity);
+                    //default is SPEEDER
+                    go = (GameObject)Instantiate(enemySpaceshipsList[0], new Vector3(enemyX, enemyY, enemyZ), Quaternion.identity);
                     go.transform.parent = parentSpaceShipEnemies.transform;
-                    go.name = "Enemy" + _numberOfEnemies;
+                    go.name = EnumEnemyShipType.speeder + "Enemy" + _numberOfEnemies;
+                    go.GetComponent<EnemyScript>().Shiptype = EnumEnemyShipType.speeder;
                     break;
             }
 
