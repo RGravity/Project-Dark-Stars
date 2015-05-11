@@ -64,7 +64,7 @@ public class MainScript : MonoBehaviour
 
         if (_asteroidToDestroy != null)
         {
-            SpawnMineral();
+            SpawnMineral(1);
         }
 
         //foreach (GameObject enemy in enemySpaceshipsInSpaceList)
@@ -91,8 +91,6 @@ public class MainScript : MonoBehaviour
 
             Vector3 distanceDifference = asteroidPosition - spaceShipPosition;
             float lengthDifference = distanceDifference.magnitude;
-
-            Debug.Log(AsteroidsInSpaceList.Count);
 
             if (lengthDifference > MaxDistanceToPlayer)
             {
@@ -401,39 +399,48 @@ public class MainScript : MonoBehaviour
         _spawnNewEnemyship = false;
     }
 
-    void SpawnMineral()
+    void SpawnMineral(int amount)
     {
-        int rnd = Random.Range(0, 54);
-        Object ObjectToSpawn;
-        if (rnd > 49)
+        for (int i = 0; i < amount; i++)
         {
-            //Mineral10
-            ObjectToSpawn = mineralsList[3];
-        }
-        else if (rnd > 39)
-        {
-            //Mineral5
-            ObjectToSpawn = mineralsList[2];
-        }
-        else if (rnd > 24)
-        {
-            //Mineral2
-            ObjectToSpawn = mineralsList[1];
-        }
-        else
-        {
-            //Mineral1
-            ObjectToSpawn = mineralsList[0];
-        }
-        GameObject go = (GameObject)Instantiate(ObjectToSpawn, _asteroidToDestroy.transform.position, _asteroidToDestroy.transform.rotation);
-        go.transform.localScale = new Vector3(2, 2, 2);
-        go.transform.parent = parentSpaceShipEnemies.transform;
-        go.name = "Mineral" + _numberOfMinerals;
-        AsteroidsInSpaceList.Remove(_asteroidToDestroy.name);
-        Destroy(_asteroidToDestroy);
+            int rnd = Random.Range(0, 54);
+            Object ObjectToSpawn;
+            if (rnd > 49)
+            {
+                //Mineral10
+                ObjectToSpawn = mineralsList[3];
+            }
+            else if (rnd > 39)
+            {
+                //Mineral5
+                ObjectToSpawn = mineralsList[2];
+            }
+            else if (rnd > 24)
+            {
+                //Mineral2
+                ObjectToSpawn = mineralsList[1];
+            }
+            else
+            {
+                //Mineral1
+                ObjectToSpawn = mineralsList[0];
+            }
 
-        _numberOfMinerals++;
+            GameObject go = (GameObject)Instantiate(ObjectToSpawn, _asteroidToDestroy.transform.position, _asteroidToDestroy.transform.rotation);
+            go.transform.localScale = new Vector3(2, 2, 2);
+            go.transform.parent = parentSpaceShipEnemies.transform;
+            go.name = "Mineral" + _numberOfMinerals;
 
-        _asteroidToDestroy = null;
+            if (_asteroidToDestroy != null)
+            {
+                AsteroidsInSpaceList.Remove(_asteroidToDestroy.name);
+                Destroy(_asteroidToDestroy);
+                _asteroidToDestroy = null;
+            }
+            _numberOfMinerals++;
+
+            
+        }
+        
     }
 }
