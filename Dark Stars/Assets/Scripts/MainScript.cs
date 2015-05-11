@@ -52,7 +52,7 @@ public class MainScript : MonoBehaviour
     void Start()
     {
         SpawnPlayerShip();
-        SpawnAsteroids(_numberOfAsteroids);
+        SpawnAsteroids(amountOfAsteroids);
         SpawnRandomEnemyShips();
     }
 
