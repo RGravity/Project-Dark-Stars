@@ -2,14 +2,21 @@
 using System.Collections;
 using System.Collections.Generic;
 
+public enum EnumEnemyShipType
+{
+    speeder,
+    saboteur,
+    bruiser,
+}
+
 public class MainScript : MonoBehaviour
 {
 
     private bool _spawnNewAsteroid = false;
     public bool SpawnNewAsteroid { set { _spawnNewAsteroid = value; } }
 
-    private bool _spawnNewEnemyship = false;
-    public bool SpawnNewEnemyship { set { _spawnNewEnemyship = value; } }
+    private GameObject _spawnNewEnemyship;
+    public GameObject SpawnNewEnemyship { set { _spawnNewEnemyship = value; } }
 
     private GameObject _asteroidToDestroy;
     public GameObject AsteroidToDestroy { set { _asteroidToDestroy = value; } }
@@ -45,8 +52,8 @@ public class MainScript : MonoBehaviour
     void Start()
     {
         SpawnPlayerShip();
-        SpawnAsteroids();
-        SpawnEnemyShips();
+        SpawnAsteroids(amountOfAsteroids);
+        SpawnRandomEnemyShips();
     }
 
     // Update is called once per frame
@@ -57,9 +64,9 @@ public class MainScript : MonoBehaviour
             SpawnAsteroid();
         }
 
-        if (_spawnNewEnemyship)
+        if (_spawnNewEnemyship != null)
         {
-            SpawnEnemyShip();
+            SpawnEnemyShips(_spawnNewEnemyship.GetComponent<EnemyScript>().Shiptype, 1);
         }
 
         if (_asteroidToDestroy != null)
@@ -113,10 +120,10 @@ public class MainScript : MonoBehaviour
         go.name = "Spaceship";
     }
 
-    void SpawnAsteroids()
+    void SpawnAsteroids(int amount)
     {
         Vector3 spaceShipPosition = GameObject.Find("Spaceship").transform.position;
-        for (int i = 0; i < amountOfAsteroids; i++)
+        for (int i = 0; i < amount; i++)
         {
             float asteroidX = 0;
             float asteroidY = 0;
@@ -180,6 +187,9 @@ public class MainScript : MonoBehaviour
             } while (lengthAsteroidToSpaceship > MaxDistanceToPlayer);
 
             GameObject go = (GameObject)Instantiate(AsteroidsList[Random.Range(0, AsteroidsList.Count)], new Vector3(asteroidX, asteroidY, asteroidZ), Quaternion.identity);
+            float randomScale = Random.Range(0.01f, 2.0f);
+            go.transform.localScale = new Vector3(randomScale, randomScale, randomScale);
+            go.transform.rotation = new Quaternion(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360));
             go.transform.parent = parentAsteroids.transform;
             go.name = "Asteroid" + _numberOfAsteroids;
             AsteroidsInSpaceList.Add(go.name);
@@ -258,7 +268,7 @@ public class MainScript : MonoBehaviour
         _spawnNewAsteroid = false;
     }
 
-    void SpawnEnemyShips()
+    void SpawnRandomEnemyShips()
     {
         Vector3 spaceShipPosition = GameObject.Find("Spaceship").transform.position;
         for (int i = 0; i < amountOfEnemies; i++)
@@ -321,82 +331,129 @@ public class MainScript : MonoBehaviour
 
             } while (lengthEnemyToSpaceship < MaxDistanceToPlayer);
 
-            GameObject go = (GameObject)Instantiate(enemySpaceshipsList[Random.Range(0, enemySpaceshipsList.Count)], new Vector3(enemyX, enemyY, enemyZ), Quaternion.identity);
-            go.transform.parent = parentSpaceShipEnemies.transform;
-            go.name = "Enemy" + _numberOfEnemies;
+            GameObject go;
+            switch (Random.Range(0, enemySpaceshipsList.Count))
+            {
+                case 0:
+                    go = (GameObject)Instantiate(enemySpaceshipsList[0], new Vector3(enemyX, enemyY, enemyZ), Quaternion.identity);
+                    go.transform.parent = parentSpaceShipEnemies.transform;
+                    go.name = EnumEnemyShipType.speeder + "Enemy" + _numberOfEnemies;
+                    go.GetComponent<EnemyScript>().Shiptype = EnumEnemyShipType.speeder;
+                    break;
+                case 1:
+                    go = (GameObject)Instantiate(enemySpaceshipsList[1], new Vector3(enemyX, enemyY, enemyZ), Quaternion.identity);
+                    go.transform.parent = parentSpaceShipEnemies.transform;
+                    go.name = EnumEnemyShipType.saboteur + "Enemy" + _numberOfEnemies;
+                    go.GetComponent<EnemyScript>().Shiptype = EnumEnemyShipType.saboteur;
+                    break;
+                case 2:
+                    go = (GameObject)Instantiate(enemySpaceshipsList[2], new Vector3(enemyX, enemyY, enemyZ), Quaternion.identity);
+                    go.transform.parent = parentSpaceShipEnemies.transform;
+                    go.name = EnumEnemyShipType.bruiser + "Enemy" + _numberOfEnemies;
+                    go.GetComponent<EnemyScript>().Shiptype = EnumEnemyShipType.bruiser;
+                    break;
+                default:
+                    //default is SPEEDER
+                    go = (GameObject)Instantiate(enemySpaceshipsList[0], new Vector3(enemyX, enemyY, enemyZ), Quaternion.identity);
+                    go.transform.parent = parentSpaceShipEnemies.transform;
+                    go.name = EnumEnemyShipType.speeder + "Enemy" + _numberOfEnemies;
+                    go.GetComponent<EnemyScript>().Shiptype = EnumEnemyShipType.speeder;
+                    break;
+            }
 
             _numberOfEnemies++;
         }
     }
 
-    void SpawnEnemyShip()
+    void SpawnEnemyShips(EnumEnemyShipType enemyShipType, int amount)
     {
         Vector3 spaceShipPosition = GameObject.Find("Spaceship").transform.position;
-
-        float enemyX = 0;
-        float enemyY = 0;
-        float enemyZ = 0;
-        Vector3 EnemyPosition = new Vector3(enemyX, enemyY, enemyZ);
-        float lengthEnemyToSpaceship = 0;
-
-        do
+        for (int i = 0; i < amount; i++)
         {
-            int positiveORnegative = 0;
+            float enemyX = 0;
+            float enemyY = 0;
+            float enemyZ = 0;
+            Vector3 EnemyPosition = new Vector3(enemyX, enemyY, enemyZ);
+            float lengthEnemyToSpaceship = 0;
+            GameObject go;
 
-            // 0 = positive , 1 = negative
-            positiveORnegative = Random.Range(0, 2);
-            switch (positiveORnegative)
+            do
             {
-                case 0:
-                    enemyX = spaceShipPosition.x + Random.Range(0, MaxDistanceToPlayer);
+                int positiveORnegative = 0;
+
+                // 0 = positive , 1 = negative
+                positiveORnegative = Random.Range(0, 2);
+                switch (positiveORnegative)
+                {
+                    case 0:
+                        enemyX = spaceShipPosition.x + Random.Range(0, MaxDistanceToPlayer);
+                        break;
+                    case 1:
+                        enemyX = spaceShipPosition.x + Random.Range(-MaxDistanceToPlayer, 0);
+                        break;
+                    default:
+                        break;
+                }
+
+                // 0 = positive , 1 = negative
+                positiveORnegative = Random.Range(0, 2);
+                switch (positiveORnegative)
+                {
+                    case 0:
+                        enemyY = spaceShipPosition.y + Random.Range(0, MaxDistanceToPlayer);
+                        break;
+                    case 1:
+                        enemyY = spaceShipPosition.y + Random.Range(-MaxDistanceToPlayer, 0);
+                        break;
+                    default:
+                        break;
+                }
+
+                // 0 = positive , 1 = negative
+                positiveORnegative = Random.Range(0, 2);
+                switch (positiveORnegative)
+                {
+                    case 0:
+                        enemyZ = spaceShipPosition.z + Random.Range(0, MaxDistanceToPlayer);
+                        break;
+                    case 1:
+                        enemyZ = spaceShipPosition.z + Random.Range(-MaxDistanceToPlayer, 0);
+                        break;
+                    default:
+                        break;
+                }
+
+                EnemyPosition = new Vector3(enemyX, enemyY, enemyZ);
+                Vector3 DistanceEnemyToSpaceship = EnemyPosition - spaceShipPosition;
+                lengthEnemyToSpaceship = DistanceEnemyToSpaceship.magnitude;
+
+            } while (lengthEnemyToSpaceship < MaxDistanceToPlayer);
+
+            switch (enemyShipType)
+            {
+                case EnumEnemyShipType.speeder:
+                    go = (GameObject)Instantiate(enemySpaceshipsList[0], new Vector3(enemyX, enemyY, enemyZ), Quaternion.identity);
+                    go.transform.parent = parentSpaceShipEnemies.transform;
+                    go.name = EnumEnemyShipType.speeder + "Enemy" + _numberOfEnemies;
                     break;
-                case 1:
-                    enemyX = spaceShipPosition.x + Random.Range(-MaxDistanceToPlayer, 0);
+                case EnumEnemyShipType.saboteur:
+                    go = (GameObject)Instantiate(enemySpaceshipsList[1], new Vector3(enemyX, enemyY, enemyZ), Quaternion.identity);
+                    go.transform.parent = parentSpaceShipEnemies.transform;
+                    go.name = EnumEnemyShipType.saboteur + "Enemy" + _numberOfEnemies;
+                    break;
+                case EnumEnemyShipType.bruiser:
+                    go = (GameObject)Instantiate(enemySpaceshipsList[2], new Vector3(enemyX, enemyY, enemyZ), Quaternion.identity);
+                    go.transform.parent = parentSpaceShipEnemies.transform;
+                    go.name = EnumEnemyShipType.bruiser + "Enemy" + _numberOfEnemies;
                     break;
                 default:
                     break;
             }
 
-            // 0 = positive , 1 = negative
-            positiveORnegative = Random.Range(0, 2);
-            switch (positiveORnegative)
-            {
-                case 0:
-                    enemyY = spaceShipPosition.y + Random.Range(0, MaxDistanceToPlayer);
-                    break;
-                case 1:
-                    enemyY = spaceShipPosition.y + Random.Range(-MaxDistanceToPlayer, 0);
-                    break;
-                default:
-                    break;
-            }
 
-            // 0 = positive , 1 = negative
-            positiveORnegative = Random.Range(0, 2);
-            switch (positiveORnegative)
-            {
-                case 0:
-                    enemyZ = spaceShipPosition.z + Random.Range(0, MaxDistanceToPlayer);
-                    break;
-                case 1:
-                    enemyZ = spaceShipPosition.z + Random.Range(-MaxDistanceToPlayer, 0);
-                    break;
-                default:
-                    break;
-            }
-
-            EnemyPosition = new Vector3(enemyX, enemyY, enemyZ);
-            Vector3 DistanceEnemyToSpaceship = EnemyPosition - spaceShipPosition;
-            lengthEnemyToSpaceship = DistanceEnemyToSpaceship.magnitude;
-
-        } while (lengthEnemyToSpaceship < MaxDistanceToPlayer);
-
-        GameObject go = (GameObject)Instantiate(enemySpaceshipsList[Random.Range(0, enemySpaceshipsList.Count)], new Vector3(enemyX, enemyY, enemyZ), Quaternion.identity);
-        go.transform.parent = parentSpaceShipEnemies.transform;
-        go.name = "Enemy" + _numberOfEnemies;
-
-        _numberOfEnemies++;
-        _spawnNewEnemyship = false;
+            _numberOfEnemies++;
+            _spawnNewEnemyship = null;
+        }
     }
 
     void SpawnMineral(int amount)

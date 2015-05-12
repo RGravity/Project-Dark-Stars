@@ -24,7 +24,6 @@ public class EnemyLaserScript : MonoBehaviour {
         float distance = Vector3.Distance(target.transform.position, parent.position);
         if (distance < LaserDistance && (Vector3.Angle(transform.forward, target.transform.position - transform.position) < angle))
         {
-            Debug.Log("FIRUUUUHH ZE LAZOR!!!");
             StopCoroutine("FireLaser");
             StartCoroutine("FireLaser");
         }
@@ -52,6 +51,12 @@ public class EnemyLaserScript : MonoBehaviour {
                         hit.rigidbody.AddForceAtPosition(transform.forward * 10, hit.point);
                         GameObject asteroidHit = GameObject.Find(hit.collider.gameObject.name);
                         asteroidHit.GetComponent<AsteroidScript>().Hit = true;
+                    }
+                    else if (hit.collider.gameObject.name.Contains("Player"))
+                    {
+                        hit.rigidbody.AddForceAtPosition(transform.forward * 10, hit.point);
+                        GameObject playerHit = GameObject.Find("Spaceship");
+                        playerHit.GetComponent<PlayerController>().Hit = true;
                     }
                 }
             }

@@ -3,13 +3,13 @@ using System.Collections;
 
 public class LevelEditorScript : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    LevelEditorMain main = GameObject.Find("Main").GetComponent<LevelEditorMain>();
+
+    private int _amountOfLevels = 2;
+
+    public void level1()
+    {
+        
+    }
+
 }

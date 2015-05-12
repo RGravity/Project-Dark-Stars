@@ -5,13 +5,21 @@ using System.Collections;
 
 public class EnemyScript : MonoBehaviour {
 
+    public EnumEnemyShipType Shiptype;
+
     public GameObject target;
 
     Vector3 acceleration;
     Vector3 velocty;
-    float speed = 5.0f;
+    public float EnemySpeed = 5.0f;
 
     GameObject[] boids;
+
+    //HP
+    private bool _hit = false;
+    public int HP = 100;
+
+    public bool Hit { set { _hit = value; } }
 
 	// Use this for initialization
 	void Start () {
@@ -33,8 +41,8 @@ public class EnemyScript : MonoBehaviour {
         acceleration = r1 + r2 + r3;
         velocty += 2 * acceleration * Time.deltaTime;
 
-        if (velocty.magnitude > speed)
-            velocty = velocty.normalized * speed;
+        if (velocty.magnitude > EnemySpeed)
+            velocty = velocty.normalized * EnemySpeed;
         GetComponent<Rigidbody>().velocity = velocty;
 
         Quaternion desiredRotation = Quaternion.LookRotation(velocty);
@@ -82,5 +90,20 @@ public class EnemyScript : MonoBehaviour {
 
         return c * 3.0f;
 
+    }
+
+    void CheckHit()
+    {
+        if (_hit)
+        {
+            HP--;
+            Debug.Log("Enemy " + gameObject.name + " HP is lowered to: " + HP);
+            Hit = false;
+            if (HP <= 0)
+            {
+                Debug.Log("Enemy " + gameObject.name + " Killed");
+                Destroy(gameObject);
+            }
+        }
     }
 }

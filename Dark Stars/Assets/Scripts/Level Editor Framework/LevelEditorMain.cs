@@ -10,6 +10,9 @@ public class LevelEditorMain : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	    
+	    //GameObject.Find("Main").GetComponent<LevelEditorScript>().
 	}
+
+    
+    
 }
