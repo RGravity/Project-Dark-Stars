@@ -87,52 +87,6 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &120934393
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 400000, guid: 2986cec5d941b3a4fa516fd76cb5263d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -50.0243835
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 2986cec5d941b3a4fa516fd76cb5263d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -103.469513
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 2986cec5d941b3a4fa516fd76cb5263d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -417.534119
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 2986cec5d941b3a4fa516fd76cb5263d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 2986cec5d941b3a4fa516fd76cb5263d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 2986cec5d941b3a4fa516fd76cb5263d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 2986cec5d941b3a4fa516fd76cb5263d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 2986cec5d941b3a4fa516fd76cb5263d, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2300000, guid: 2986cec5d941b3a4fa516fd76cb5263d, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 3ceadbe1e0fb5f347a3445286d8cd6f5, type: 2}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 2986cec5d941b3a4fa516fd76cb5263d, type: 3}
-  m_IsPrefabParent: 0
 --- !u!1 &811674561
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,7 +259,7 @@ Transform:
   - {fileID: 1603612046}
   - {fileID: 1440647727}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!114 &2101569827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,17 +278,17 @@ MonoBehaviour:
   MinDistanceToPlayer: 30
   MaxDistanceToPlayer: 100
   AsteroidsList:
-  - {fileID: 119130, guid: c9e25c6723ce4824baf26b242c040cbc, type: 2}
-  - {fileID: 113602, guid: 7070715108eead64ba026f980cd62ddf, type: 2}
-  - {fileID: 192944, guid: ed4cb3a4393804347975372bea0daa7e, type: 2}
-  - {fileID: 186044, guid: 8dd2b025349e51941a95f6941df604f4, type: 2}
-  - {fileID: 180450, guid: 0efb0659bb0be5645ba6f6bf85018c25, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   parentSpaceShipEnemies: {fileID: 1321645092}
   amountOfEnemies: 2
   enemySpaceshipsList:
-  - {fileID: 137320, guid: a32550bbf55a3a246919d5cdbb4d16fe, type: 2}
-  - {fileID: 146902, guid: 1eeea2f5bc9560948b41bbe252e0ccc5, type: 2}
-  - {fileID: 107464, guid: 1c88d55e52745004293f954fcfa6a4a2, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   parentMinerals: {fileID: 1440647726}
   mineralsList:
   - {fileID: 173178, guid: 92db2354d24863f4daeba236de8dd7bc, type: 2}
