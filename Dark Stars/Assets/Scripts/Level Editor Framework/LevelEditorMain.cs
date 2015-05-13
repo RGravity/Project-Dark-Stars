@@ -6,7 +6,8 @@ public class LevelEditorMain : MonoBehaviour {
     MainScript mainScript;
     LevelEditorScript LevelScript;
     private int level = 1;
-    private bool NextlevelToLoad = true;
+    private bool _nextlevelToLoad = true;
+    public bool NextLevelToLoad { set { _nextlevelToLoad = value; } }
     private int MaxLevels;
 
 	// Use this for initialization
@@ -21,11 +22,11 @@ public class LevelEditorMain : MonoBehaviour {
     {
         if (level <= MaxLevels)
         {
-            if (NextlevelToLoad)
+            if (_nextlevelToLoad)
             {
                 LevelScript.levels(level);
                 level++;
-                NextlevelToLoad = false;
+                _nextlevelToLoad = false;
             }
         }
 	}
