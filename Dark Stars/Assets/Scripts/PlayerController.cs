@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.Joystick1Button1) || Input.GetKey(KeyCode.LeftShift))
             speed += accel * Time.fixedDeltaTime;
-        else if (Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKey(KeyCode.Space))
+        else if (Input.GetKey(KeyCode.Joystick1Button2) || Input.GetKey(KeyCode.Space))
             speed -= decel * Time.fixedDeltaTime;
 
         else if (Mathf.Abs(deltaSpeed) > .1f)

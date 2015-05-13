@@ -36,7 +36,9 @@ public class EnemyLaserScript : MonoBehaviour {
         float distance = Vector3.Distance(target.transform.position, parent.position);
         while (distance < LaserDistance && (Vector3.Angle(transform.forward, target.transform.position - transform.position) < angle))
         {
-            Ray ray = new Ray(transform.position, transform.forward);
+            Vector3 GunTip = GameObject.Find("GunTip Point").transform.position;
+            gameObject.GetComponent<LineRenderer>().useWorldSpace = true;
+            Ray ray = new Ray(GunTip, transform.forward);
             RaycastHit hit;
 
             line.SetPosition(0, ray.origin);
@@ -68,6 +70,7 @@ public class EnemyLaserScript : MonoBehaviour {
         }
 
         line.enabled = false;
+        gameObject.GetComponent<LineRenderer>().useWorldSpace = false;
     }
     
 }

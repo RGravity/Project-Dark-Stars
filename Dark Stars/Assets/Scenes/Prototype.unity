@@ -142,11 +142,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1222413557}
   m_LocalRotation: {x: .00846257154, y: -.999847054, z: -.00898210425, w: -.0123945922}
-  m_LocalPosition: {x: -268.140015, y: -121.169998, z: 8611.40039}
+  m_LocalPosition: {x: -268.096985, y: -122.220001, z: 8616.15234}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_Father: {fileID: 2101569826}
+  m_RootOrder: 3
 --- !u!1 &1321645092
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,6 +257,7 @@ Transform:
   - {fileID: 1321645093}
   - {fileID: 1603612046}
   - {fileID: 1568799192}
+  - {fileID: 1222413559}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!114 &2101569827
@@ -283,11 +284,11 @@ MonoBehaviour:
   - {fileID: 110608, guid: 8dd2b025349e51941a95f6941df604f4, type: 2}
   - {fileID: 198218, guid: 0efb0659bb0be5645ba6f6bf85018c25, type: 2}
   parentSpaceShipEnemies: {fileID: 1321645092}
-  amountOfEnemies: 5
+  amountOfEnemies: 4
   enemySpaceshipsList:
-  - {fileID: 135934, guid: a32550bbf55a3a246919d5cdbb4d16fe, type: 2}
-  - {fileID: 126164, guid: 1eeea2f5bc9560948b41bbe252e0ccc5, type: 2}
-  - {fileID: 158024, guid: 1c88d55e52745004293f954fcfa6a4a2, type: 2}
+  - {fileID: 192340, guid: bfbf4d0b521c66649a2b8ea2ebe30f56, type: 2}
+  - {fileID: 192340, guid: bfbf4d0b521c66649a2b8ea2ebe30f56, type: 2}
+  - {fileID: 192340, guid: bfbf4d0b521c66649a2b8ea2ebe30f56, type: 2}
   parentMinerals: {fileID: 1568799191}
   mineralsList:
   - {fileID: 173178, guid: 92db2354d24863f4daeba236de8dd7bc, type: 2}
