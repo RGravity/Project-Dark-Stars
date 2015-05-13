@@ -54,11 +54,16 @@ public class AsteroidScript : MonoBehaviour {
 
     void SpawnMineral()
     {
-        GameObject.Find("Main").GetComponent<MainScript>().AsteroidToDestroy = gameObject;
+        GameObject.FindObjectOfType<MainScript>().AsteroidToDestroy = gameObject;
     }
 
     void SpawnNewAsteroid()
     {
         GameObject.Find("Main").GetComponent<MainScript>().SpawnNewAsteroid = true;
+    }
+
+    public void Kill()
+    {
+        Debug.Log("Spawn mineral!");
     }
 }

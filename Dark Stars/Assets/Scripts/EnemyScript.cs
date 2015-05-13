@@ -106,4 +106,9 @@ public class EnemyScript : MonoBehaviour {
             }
         }
     }
+
+    public void TakeDamage(float amount)
+    {
+        // bkladsgnl
+    }
 }
