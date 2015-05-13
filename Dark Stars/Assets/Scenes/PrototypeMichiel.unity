@@ -288,7 +288,7 @@ MonoBehaviour:
   parentSpaceShipEnemies: {fileID: 1075670747}
   amountOfEnemies: 1
   enemySpaceshipsList:
-  - {fileID: 135934, guid: a32550bbf55a3a246919d5cdbb4d16fe, type: 2}
+  - {fileID: 192340, guid: bfbf4d0b521c66649a2b8ea2ebe30f56, type: 2}
   - {fileID: 126164, guid: 1eeea2f5bc9560948b41bbe252e0ccc5, type: 2}
   - {fileID: 158024, guid: 1c88d55e52745004293f954fcfa6a4a2, type: 2}
   parentMinerals: {fileID: 1872095693}
