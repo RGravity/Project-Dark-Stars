@@ -6,17 +6,29 @@ public class LevelEditorMain : MonoBehaviour {
     MainScript mainScript;
     LevelEditorScript LevelScript;
     private int level = 1;
+    private bool _nextlevelToLoad = true;
+    public bool NextLevelToLoad { set { _nextlevelToLoad = value; } }
     private int MaxLevels;
 
 	// Use this for initialization
 	void Start () {
         mainScript = GameObject.Find("Main").GetComponent<MainScript>();
         LevelScript = GameObject.Find("Main").GetComponent<LevelEditorScript>();
+        MaxLevels = LevelScript.amountOfLevels;
 	}
 	
 	// Update is called once per frame
-	void Update () {
-        
+	void Update () 
+    {
+        if (level <= MaxLevels)
+        {
+            if (_nextlevelToLoad)
+            {
+                LevelScript.levels(level);
+                level++;
+                _nextlevelToLoad = false;
+            }
+        }
 	}
 
     public void spawnAsteroids(int amount)
@@ -24,7 +36,12 @@ public class LevelEditorMain : MonoBehaviour {
         mainScript.SpawnAsteroids(amount);
     }
 
-    public void spawnEnemy(EnumEnemyShipType shiptype, int amount)
+    public void spawnEnemy(EnumEnemyShipType shiptype)
+    {
+        mainScript.SpawnEnemyShips(shiptype, 1);
+    }
+
+    public void spawnEnemies(EnumEnemyShipType shiptype, int amount)
     {
         mainScript.SpawnEnemyShips(shiptype, amount);
     }
@@ -52,6 +69,16 @@ public class LevelEditorMain : MonoBehaviour {
         mainScript.MineralsAllowed = MineralList;
     }
 
+    public void setMaxDistanceToPlayer(int distance)
+    {
+        mainScript.MaxDistanceToPlayer = distance;
+        GameObject.Find("Spaceship").GetComponentInChildren<Camera>().farClipPlane = distance + 100;
+    }
+
+    public void setMinDistanceToPlayer(int distance)
+    {
+        mainScript.MinDistanceToPlayer = distance;
+    }
 
     
     
