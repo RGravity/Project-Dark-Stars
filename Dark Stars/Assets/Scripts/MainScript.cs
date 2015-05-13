@@ -355,26 +355,26 @@ public class MainScript : MonoBehaviour
                     go = (GameObject)Instantiate(enemySpaceshipsList[0], new Vector3(enemyX, enemyY, enemyZ), Quaternion.identity);
                     go.transform.parent = parentSpaceShipEnemies.transform;
                     go.name = EnumEnemyShipType.speeder + "Enemy" + _numberOfEnemies;
-                    go.GetComponent<EnemyScript>().Shiptype = EnumEnemyShipType.speeder;
+                    go.GetComponentInChildren<EnemyScript>().Shiptype = EnumEnemyShipType.speeder;
                     break;
                 case 1:
                     go = (GameObject)Instantiate(enemySpaceshipsList[1], new Vector3(enemyX, enemyY, enemyZ), Quaternion.identity);
                     go.transform.parent = parentSpaceShipEnemies.transform;
                     go.name = EnumEnemyShipType.assailant + "Enemy" + _numberOfEnemies;
-                    go.GetComponent<EnemyScript>().Shiptype = EnumEnemyShipType.assailant;
+                    go.GetComponentInChildren<EnemyScript>().Shiptype = EnumEnemyShipType.assailant;
                     break;
                 case 2:
                     go = (GameObject)Instantiate(enemySpaceshipsList[2], new Vector3(enemyX, enemyY, enemyZ), Quaternion.identity);
                     go.transform.parent = parentSpaceShipEnemies.transform;
                     go.name = EnumEnemyShipType.bruiser + "Enemy" + _numberOfEnemies;
-                    go.GetComponent<EnemyScript>().Shiptype = EnumEnemyShipType.bruiser;
+                    go.GetComponentInChildren<EnemyScript>().Shiptype = EnumEnemyShipType.bruiser;
                     break;
                 default:
                     //default is SPEEDER
                     go = (GameObject)Instantiate(enemySpaceshipsList[0], new Vector3(enemyX, enemyY, enemyZ), Quaternion.identity);
                     go.transform.parent = parentSpaceShipEnemies.transform;
                     go.name = EnumEnemyShipType.speeder + "Enemy" + _numberOfEnemies;
-                    go.GetComponent<EnemyScript>().Shiptype = EnumEnemyShipType.speeder;
+                    go.GetComponentInChildren<EnemyScript>().Shiptype = EnumEnemyShipType.speeder;
                     break;
             }
 
