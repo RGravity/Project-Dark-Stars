@@ -68,8 +68,8 @@ public class MainScript : MonoBehaviour
     void Start()
     {
         SpawnPlayerShip();
-        SpawnAsteroids(amountOfAsteroids);
-        SpawnRandomEnemyShips();
+        //SpawnAsteroids(amountOfAsteroids);
+        //SpawnRandomEnemyShips(amountOfEnemies);
     }
 
     // Update is called once per frame
@@ -140,6 +140,7 @@ public class MainScript : MonoBehaviour
     public void SpawnAsteroids(int amount)
     {
         Vector3 spaceShipPosition = GameObject.Find("Spaceship").transform.position;
+
         for (int i = 0; i < amount; i++)
         {
             float asteroidX = 0;
@@ -285,10 +286,10 @@ public class MainScript : MonoBehaviour
         _spawnNewAsteroid = false;
     }
 
-    void SpawnRandomEnemyShips()
+    void SpawnRandomEnemyShips(int amount)
     {
         Vector3 spaceShipPosition = GameObject.Find("Spaceship").transform.position;
-        for (int i = 0; i < amountOfEnemies; i++)
+        for (int i = 0; i < amount; i++)
         {
             float enemyX = 0;
             float enemyY = 0;
