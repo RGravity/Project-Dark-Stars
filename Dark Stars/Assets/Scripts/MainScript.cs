@@ -5,8 +5,16 @@ using System.Collections.Generic;
 public enum EnumEnemyShipType
 {
     speeder,
-    saboteur,
+    assailant,
     bruiser,
+}
+
+public enum EnumMinerals
+{
+    xenonite1,
+    helionite2,
+    argonite5,
+    neonite10,
 }
 
 public class MainScript : MonoBehaviour
@@ -45,6 +53,14 @@ public class MainScript : MonoBehaviour
     public GameObject parentMinerals;
     public List<Object> mineralsList = new List<Object>();
     private int _numberOfMinerals = 0;
+
+    private List<EnumMinerals> _mineralsAllowed = new List<EnumMinerals>() { 
+        EnumMinerals.xenonite1, 
+        EnumMinerals.helionite2, 
+        EnumMinerals.argonite5, 
+        EnumMinerals.neonite10,
+    };
+    public List<EnumMinerals> MineralsAllowed { get { return _mineralsAllowed; } set { _mineralsAllowed = value; } }
 
 
 
@@ -118,9 +134,10 @@ public class MainScript : MonoBehaviour
         GameObject go = (GameObject)Instantiate(spaceShip, new Vector3(0, 0, 0), Quaternion.identity);
         go.transform.parent = parentSpaceShip.transform;
         go.name = "Spaceship";
+        go.GetComponentInChildren<Camera>().farClipPlane = MaxDistanceToPlayer + 100;
     }
 
-    void SpawnAsteroids(int amount)
+    public void SpawnAsteroids(int amount)
     {
         Vector3 spaceShipPosition = GameObject.Find("Spaceship").transform.position;
         for (int i = 0; i < amount; i++)
@@ -329,7 +346,7 @@ public class MainScript : MonoBehaviour
                 Vector3 DistanceEnemyToSpaceship = EnemyPosition - spaceShipPosition;
                 lengthEnemyToSpaceship = DistanceEnemyToSpaceship.magnitude;
 
-            } while (lengthEnemyToSpaceship < MaxDistanceToPlayer);
+            } while (lengthEnemyToSpaceship < MinDistanceToPlayer);
 
             GameObject go;
             switch (Random.Range(0, enemySpaceshipsList.Count))
@@ -343,8 +360,8 @@ public class MainScript : MonoBehaviour
                 case 1:
                     go = (GameObject)Instantiate(enemySpaceshipsList[1], new Vector3(enemyX, enemyY, enemyZ), Quaternion.identity);
                     go.transform.parent = parentSpaceShipEnemies.transform;
-                    go.name = EnumEnemyShipType.saboteur + "Enemy" + _numberOfEnemies;
-                    go.GetComponent<EnemyScript>().Shiptype = EnumEnemyShipType.saboteur;
+                    go.name = EnumEnemyShipType.assailant + "Enemy" + _numberOfEnemies;
+                    go.GetComponent<EnemyScript>().Shiptype = EnumEnemyShipType.assailant;
                     break;
                 case 2:
                     go = (GameObject)Instantiate(enemySpaceshipsList[2], new Vector3(enemyX, enemyY, enemyZ), Quaternion.identity);
@@ -365,7 +382,7 @@ public class MainScript : MonoBehaviour
         }
     }
 
-    void SpawnEnemyShips(EnumEnemyShipType enemyShipType, int amount)
+    public void SpawnEnemyShips(EnumEnemyShipType enemyShipType, int amount)
     {
         Vector3 spaceShipPosition = GameObject.Find("Spaceship").transform.position;
         for (int i = 0; i < amount; i++)
@@ -436,10 +453,10 @@ public class MainScript : MonoBehaviour
                     go.transform.parent = parentSpaceShipEnemies.transform;
                     go.name = EnumEnemyShipType.speeder + "Enemy" + _numberOfEnemies;
                     break;
-                case EnumEnemyShipType.saboteur:
+                case EnumEnemyShipType.assailant:
                     go = (GameObject)Instantiate(enemySpaceshipsList[1], new Vector3(enemyX, enemyY, enemyZ), Quaternion.identity);
                     go.transform.parent = parentSpaceShipEnemies.transform;
-                    go.name = EnumEnemyShipType.saboteur + "Enemy" + _numberOfEnemies;
+                    go.name = EnumEnemyShipType.assailant + "Enemy" + _numberOfEnemies;
                     break;
                 case EnumEnemyShipType.bruiser:
                     go = (GameObject)Instantiate(enemySpaceshipsList[2], new Vector3(enemyX, enemyY, enemyZ), Quaternion.identity);
@@ -460,33 +477,41 @@ public class MainScript : MonoBehaviour
     {
         for (int i = 0; i < amount; i++)
         {
-            int rnd = Random.Range(0, 54);
             Object ObjectToSpawn;
-            if (rnd > 49)
+            EnumMinerals mineralType;
+            do
             {
-                //Mineral10
-                ObjectToSpawn = mineralsList[3];
-            }
-            else if (rnd > 39)
-            {
-                //Mineral5
-                ObjectToSpawn = mineralsList[2];
-            }
-            else if (rnd > 24)
-            {
-                //Mineral2
-                ObjectToSpawn = mineralsList[1];
-            }
-            else
-            {
-                //Mineral1
-                ObjectToSpawn = mineralsList[0];
-            }
+                int rnd = Random.Range(0, 54);
+                if (rnd > 49)
+                {
+                    //Mineral10
+                    mineralType = EnumMinerals.neonite10;
+                    ObjectToSpawn = mineralsList[3];
+                }
+                else if (rnd > 39)
+                {
+                    //Mineral5
+                    mineralType = EnumMinerals.argonite5;
+                    ObjectToSpawn = mineralsList[2];
+                }
+                else if (rnd > 24)
+                {
+                    //Mineral2
+                    mineralType = EnumMinerals.helionite2;
+                    ObjectToSpawn = mineralsList[1];
+                }
+                else
+                {
+                    //Mineral1
+                    mineralType = EnumMinerals.xenonite1;
+                    ObjectToSpawn = mineralsList[0];
+                }
+            } while (!_mineralsAllowed.Contains(mineralType));
 
             GameObject go = (GameObject)Instantiate(ObjectToSpawn, _asteroidToDestroy.transform.position, _asteroidToDestroy.transform.rotation);
             go.transform.localScale = new Vector3(2, 2, 2);
-            go.transform.parent = parentSpaceShipEnemies.transform;
-            go.name = "Mineral" + _numberOfMinerals;
+            go.transform.parent = parentMinerals.transform;
+            go.name = mineralType + "Mineral" + _numberOfMinerals;
 
             if (_asteroidToDestroy != null)
             {
