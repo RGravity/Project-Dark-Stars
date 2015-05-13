@@ -36,7 +36,7 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 0}
+  m_Sun: {fileID: 811674562}
 --- !u!127 &3
 LevelGameManager:
   m_ObjectHideFlags: 0
@@ -141,7 +141,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 811674561}
-  m_LocalRotation: {x: .408217937, y: -.234569728, z: .109381676, w: .875426054}
+  m_LocalRotation: {x: .997798324, y: .0129377395, z: -.0187872108, w: -.0622752793}
   m_LocalPosition: {x: .043017447, y: 1.95000005, z: 4.75236273}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -174,6 +174,48 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2101569826}
   m_RootOrder: 1
+--- !u!1001 &1395851408
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400004, guid: 84d830ca98b2ba44dbbfc3a9db5c6d12, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.21100092
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 84d830ca98b2ba44dbbfc3a9db5c6d12, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.35993814
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 84d830ca98b2ba44dbbfc3a9db5c6d12, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 12.6798182
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 84d830ca98b2ba44dbbfc3a9db5c6d12, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 84d830ca98b2ba44dbbfc3a9db5c6d12, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 84d830ca98b2ba44dbbfc3a9db5c6d12, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 84d830ca98b2ba44dbbfc3a9db5c6d12, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 84d830ca98b2ba44dbbfc3a9db5c6d12, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 84d830ca98b2ba44dbbfc3a9db5c6d12, type: 3}
+  m_IsPrefabParent: 0
 --- !u!1 &1440647726
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,23 +314,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentSpaceShip: {fileID: 2101569825}
-  spaceShip: {fileID: 126106, guid: 13ccbd372f1c8ee4b8afee8d4fb4bc5c, type: 2}
+  spaceShip: {fileID: 147768, guid: 13ccbd372f1c8ee4b8afee8d4fb4bc5c, type: 2}
   parentAsteroids: {fileID: 1603612045}
   amountOfAsteroids: 50
   MinDistanceToPlayer: 30
   MaxDistanceToPlayer: 100
   AsteroidsList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 162758, guid: c9e25c6723ce4824baf26b242c040cbc, type: 2}
+  - {fileID: 169090, guid: 7070715108eead64ba026f980cd62ddf, type: 2}
+  - {fileID: 187092, guid: ed4cb3a4393804347975372bea0daa7e, type: 2}
+  - {fileID: 110608, guid: 8dd2b025349e51941a95f6941df604f4, type: 2}
+  - {fileID: 198218, guid: 0efb0659bb0be5645ba6f6bf85018c25, type: 2}
   parentSpaceShipEnemies: {fileID: 1321645092}
   amountOfEnemies: 2
   enemySpaceshipsList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 135934, guid: a32550bbf55a3a246919d5cdbb4d16fe, type: 2}
+  - {fileID: 126164, guid: 1eeea2f5bc9560948b41bbe252e0ccc5, type: 2}
+  - {fileID: 158024, guid: 1c88d55e52745004293f954fcfa6a4a2, type: 2}
   parentMinerals: {fileID: 1440647726}
   mineralsList:
   - {fileID: 173178, guid: 92db2354d24863f4daeba236de8dd7bc, type: 2}
