@@ -207,7 +207,7 @@ public class MainScript : MonoBehaviour
             GameObject go = (GameObject)Instantiate(AsteroidsList[Random.Range(0, AsteroidsList.Count)], new Vector3(asteroidX, asteroidY, asteroidZ), Quaternion.identity);
             float randomScale = Random.Range(0.01f, 2.0f);
             go.transform.localScale = new Vector3(randomScale, randomScale, randomScale);
-            go.transform.rotation = new Quaternion(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360));
+            go.transform.rotation = Random.rotation;
             go.transform.parent = parentAsteroids.transform;
             go.name = "Asteroid" + _numberOfAsteroids;
             AsteroidsInSpaceList.Add(go.name);
@@ -278,6 +278,7 @@ public class MainScript : MonoBehaviour
 
         GameObject go = (GameObject)Instantiate(AsteroidsList[Random.Range(0, AsteroidsList.Count)], new Vector3(asteroidX, asteroidY, asteroidZ), Quaternion.identity);
         go.transform.parent = parentAsteroids.transform;
+        go.transform.rotation = Random.rotation;
         go.name = "Asteroid" + _numberOfAsteroids;
         AsteroidsInSpaceList.Add(go.name);
 
