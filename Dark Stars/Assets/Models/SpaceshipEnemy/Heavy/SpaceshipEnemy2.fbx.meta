@@ -1,0 +1,600 @@
+fileFormatVersion: 2
+guid: 3508f4bba780aa940b2f0d2115d01c2b
+timeCreated: 1431954245
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Body
+    100002: Canon_bases
+    100004: Canon_Left
+    100006: Canon_Right
+    100008: Canon_Right1
+    100010: Cockpits
+    100012: //RootNode
+    100014: Thrusters_Left
+    100016: Thrusters_Right
+    400000: Body
+    400002: Canon_bases
+    400004: Canon_Left
+    400006: Canon_Right
+    400008: Canon_Right1
+    400010: Cockpits
+    400012: //RootNode
+    400014: Thrusters_Left
+    400016: Thrusters_Right
+    2300000: Body
+    2300002: Canon_bases
+    2300004: Canon_Left
+    2300006: Canon_Right
+    2300008: Cockpits
+    2300010: Thrusters_Left
+    2300012: Thrusters_Right
+    3300000: Body
+    3300002: Canon_bases
+    3300004: Canon_Left
+    3300006: Canon_Right
+    3300008: Cockpits
+    3300010: Thrusters_Left
+    3300012: Thrusters_Right
+    4300000: Thrusters_Right
+    4300002: Thrusters_Left
+    4300004: Body
+    4300006: Cockpits
+    4300008: Canon_Right
+    4300010: Canon_Left
+    4300012: Canon_bases
+    7400000: Default
+    7400002: Turn Right
+    7400004: LevelOut R
+    7400006: Turn Left
+    7400008: LevelOut L
+    7400010: CannonR Default
+    7400012: CannonR AimR
+    7400014: CannonR AimF
+    7400016: CannonL Default
+    7400018: CannonL AimL
+    7400020: CannonL AimF
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Default
+      takeName: Take 001
+      firstFrame: 180
+      lastFrame: 200
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body
+        weight: 1
+      - path: Canon_bases
+        weight: 1
+      - path: Canon_Right1
+        weight: 1
+      - path: Canon_Right1/Canon_Left
+        weight: 1
+      - path: Canon_Right1/Canon_Right
+        weight: 1
+      - path: Cockpits
+        weight: 1
+      - path: Thrusters_Left
+        weight: 1
+      - path: Thrusters_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Turn Right
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 80
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body
+        weight: 1
+      - path: Canon_bases
+        weight: 1
+      - path: Canon_Right1
+        weight: 1
+      - path: Canon_Right1/Canon_Left
+        weight: 1
+      - path: Canon_Right1/Canon_Right
+        weight: 1
+      - path: Cockpits
+        weight: 1
+      - path: Thrusters_Left
+        weight: 1
+      - path: Thrusters_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: LevelOut R
+      takeName: Take 001
+      firstFrame: 100
+      lastFrame: 180
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body
+        weight: 1
+      - path: Canon_bases
+        weight: 1
+      - path: Canon_Right1
+        weight: 1
+      - path: Canon_Right1/Canon_Left
+        weight: 1
+      - path: Canon_Right1/Canon_Right
+        weight: 1
+      - path: Cockpits
+        weight: 1
+      - path: Thrusters_Left
+        weight: 1
+      - path: Thrusters_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Turn Left
+      takeName: Take 001
+      firstFrame: 200
+      lastFrame: 280
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body
+        weight: 1
+      - path: Canon_bases
+        weight: 1
+      - path: Canon_Right1
+        weight: 1
+      - path: Canon_Right1/Canon_Left
+        weight: 1
+      - path: Canon_Right1/Canon_Right
+        weight: 1
+      - path: Cockpits
+        weight: 1
+      - path: Thrusters_Left
+        weight: 1
+      - path: Thrusters_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: LevelOut L
+      takeName: Take 001
+      firstFrame: 300
+      lastFrame: 380
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body
+        weight: 1
+      - path: Canon_bases
+        weight: 1
+      - path: Canon_Right1
+        weight: 1
+      - path: Canon_Right1/Canon_Left
+        weight: 1
+      - path: Canon_Right1/Canon_Right
+        weight: 1
+      - path: Cockpits
+        weight: 1
+      - path: Thrusters_Left
+        weight: 1
+      - path: Thrusters_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CannonR Default
+      takeName: Take 001
+      firstFrame: 380
+      lastFrame: 400
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body
+        weight: 1
+      - path: Canon_bases
+        weight: 1
+      - path: Canon_Right1
+        weight: 1
+      - path: Canon_Right1/Canon_Left
+        weight: 1
+      - path: Canon_Right1/Canon_Right
+        weight: 1
+      - path: Cockpits
+        weight: 1
+      - path: Thrusters_Left
+        weight: 1
+      - path: Thrusters_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CannonR AimR
+      takeName: Take 001
+      firstFrame: 400
+      lastFrame: 440
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body
+        weight: 1
+      - path: Canon_bases
+        weight: 1
+      - path: Canon_Right1
+        weight: 1
+      - path: Canon_Right1/Canon_Left
+        weight: 1
+      - path: Canon_Right1/Canon_Right
+        weight: 1
+      - path: Cockpits
+        weight: 1
+      - path: Thrusters_Left
+        weight: 1
+      - path: Thrusters_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CannonR AimF
+      takeName: Take 001
+      firstFrame: 460
+      lastFrame: 500
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body
+        weight: 1
+      - path: Canon_bases
+        weight: 1
+      - path: Canon_Right1
+        weight: 1
+      - path: Canon_Right1/Canon_Left
+        weight: 1
+      - path: Canon_Right1/Canon_Right
+        weight: 1
+      - path: Cockpits
+        weight: 1
+      - path: Thrusters_Left
+        weight: 1
+      - path: Thrusters_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CannonL Default
+      takeName: Take 001
+      firstFrame: 500
+      lastFrame: 540
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body
+        weight: 1
+      - path: Canon_bases
+        weight: 1
+      - path: Canon_Right1
+        weight: 1
+      - path: Canon_Right1/Canon_Left
+        weight: 1
+      - path: Canon_Right1/Canon_Right
+        weight: 1
+      - path: Cockpits
+        weight: 1
+      - path: Thrusters_Left
+        weight: 1
+      - path: Thrusters_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CannonL AimL
+      takeName: Take 001
+      firstFrame: 540
+      lastFrame: 580
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body
+        weight: 1
+      - path: Canon_bases
+        weight: 1
+      - path: Canon_Right1
+        weight: 1
+      - path: Canon_Right1/Canon_Left
+        weight: 1
+      - path: Canon_Right1/Canon_Right
+        weight: 1
+      - path: Cockpits
+        weight: 1
+      - path: Thrusters_Left
+        weight: 1
+      - path: Thrusters_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CannonL AimF
+      takeName: Take 001
+      firstFrame: 600
+      lastFrame: 640
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body
+        weight: 1
+      - path: Canon_bases
+        weight: 1
+      - path: Canon_Right1
+        weight: 1
+      - path: Canon_Right1/Canon_Left
+        weight: 1
+      - path: Canon_Right1/Canon_Right
+        weight: 1
+      - path: Cockpits
+        weight: 1
+      - path: Thrusters_Left
+        weight: 1
+      - path: Thrusters_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
