@@ -1,42 +1,15 @@
 fileFormatVersion: 2
-guid: 93826ea47e809c04e85d2c740a41f6d2
-timeCreated: 1431945736
+guid: f2e8a740c5694474391fe805faf191d0
+timeCreated: 1431954265
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
     100000: //RootNode
-    100002: pCylinder1
-    100004: pCylinder3
-    100006: pCylinder7
-    100008: pCylinder8
-    100010: pSphere1
     400000: //RootNode
-    400002: pCylinder1
-    400004: pCylinder3
-    400006: pCylinder7
-    400008: pCylinder8
-    400010: pSphere1
-    2300000: pCylinder1
-    2300002: pCylinder3
-    2300004: pCylinder7
-    2300006: pCylinder8
-    2300008: pSphere1
-    3300000: pCylinder1
-    3300002: pCylinder3
-    3300004: pCylinder7
-    3300006: pCylinder8
-    3300008: pSphere1
+    2300000: //RootNode
+    3300000: //RootNode
     4300000: pCylinder1
-    4300002: pCylinder3
-    4300004: pCylinder7
-    4300006: pCylinder8
-    4300008: pSphere1
-    6400000: pCylinder1
-    6400002: pCylinder3
-    6400004: pCylinder7
-    6400006: pCylinder8
-    6400008: pSphere1
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -59,7 +32,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
