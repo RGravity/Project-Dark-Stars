@@ -75,15 +75,21 @@ public class PlayerController : MonoBehaviour {
 
         decel = speed - minSpeed;
         accel = maxSpeed - speed;
+        
+        bool rightTriggerHeld = Input.GetAxis("Mouse X") > 0.001f;
+        bool leftTriggerHeld = Input.GetAxis("Mouse X") < 0;
 
-        if (Input.GetKey(KeyCode.Joystick1Button1) || Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift))
             speed += accel * Time.fixedDeltaTime;
-        else if (Input.GetKey(KeyCode.Joystick1Button2) || Input.GetKey(KeyCode.Space))
+        else if (rightTriggerHeld)
+            speed += accel * Time.fixedDeltaTime;
+        else if (Input.GetKey(KeyCode.Space))
+            speed -= decel * Time.fixedDeltaTime;
+        else if (leftTriggerHeld)
             speed -= decel * Time.fixedDeltaTime;
 
         else if (Mathf.Abs(deltaSpeed) > .1f)
             speed -= Mathf.Clamp(deltaSpeed * Mathf.Abs(deltaSpeed), -30, 100) * Time.fixedDeltaTime;
-
 
         transform.GetChild(0).localPosition = cameraOffset + new Vector3(0, 0, -deltaSpeed * .02f);
 
@@ -104,11 +110,11 @@ public class PlayerController : MonoBehaviour {
         if (_hit)
         {
             HP--;
-            Debug.Log("Your HP is lowered to: " + HP);
+            //Debug.Log("Your HP is lowered to: " + HP);
             Hit = false;
             if (HP <= 0)
             {
-                Debug.Log("Your Killed");
+                //Debug.Log("Your Killed");
             }
         }
     }

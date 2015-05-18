@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 [RequireComponent(typeof(Rigidbody))]
 
@@ -11,9 +12,9 @@ public class EnemyScript : MonoBehaviour {
 
     Vector3 acceleration;
     Vector3 velocty;
-    public float EnemySpeed = 5.0f;
+    public float EnemySpeed = 10.0f;
 
-    GameObject[] boids;
+    List<GameObject> boids = new List<GameObject>();
 
     //HP
     private bool _hit = false;
@@ -23,7 +24,12 @@ public class EnemyScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-         boids = GameObject.FindGameObjectsWithTag("Enemy");
+
+         GameObject[] boidsToAdd = GameObject.FindGameObjectsWithTag("Enemy");
+         for (int i = 0; i < boidsToAdd.Length; i++)
+         {
+             boids.Add(boidsToAdd[i]);
+         }
          target = GameObject.FindGameObjectWithTag("Player");
 	}
 	
@@ -31,6 +37,7 @@ public class EnemyScript : MonoBehaviour {
 	void Update () {
         //Enemy Movement
         EnemyMovement();
+        CheckHit();
 	}
 
     void EnemyMovement()
@@ -103,6 +110,7 @@ public class EnemyScript : MonoBehaviour {
             if (HP <= 0)
             {
                 Debug.Log("Enemy " + gameObject.name + " Killed");
+                boids.Remove(gameObject);
                 Destroy(gameObject);
             }
         }

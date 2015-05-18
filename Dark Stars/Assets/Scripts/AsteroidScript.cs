@@ -13,11 +13,14 @@ public class AsteroidScript : MonoBehaviour {
 
 
     public bool Hit { set { _hit = value; } }
-    private int interval = 160;
     public int MaxInterval = 160;
+
+    float thrust = 1000;
+    Rigidbody rb;
 
 	// Use this for initialization
 	void Start () {
+        rb = gameObject.GetComponent<Rigidbody>();
         colour = this.gameObject.GetComponent<MeshRenderer>().material.color;
         colour.a = 0.00f;
         this.gameObject.GetComponent<MeshRenderer>().material.color = colour;
@@ -38,6 +41,7 @@ public class AsteroidScript : MonoBehaviour {
 
     void Movement()
     {
+        rb.AddForce(transform.forward * thrust);
     }
 
     void CheckHit()
@@ -45,12 +49,11 @@ public class AsteroidScript : MonoBehaviour {
         if (_hit)
         {
             HP--;
-            Debug.Log("HP is lowered to: " + HP);
+            //Debug.Log("Asteroid HP is lowered to: " + HP);
             Hit = false;
             if (HP <= 0)
             {
                 //Spawn Mineral, Destroy Asteroid and spawn a new one
-                Debug.Log("Asteroid Destroyed");
                 SpawnMineral();
                 SpawnNewAsteroid();
             }
@@ -65,10 +68,5 @@ public class AsteroidScript : MonoBehaviour {
     void SpawnNewAsteroid()
     {
         GameObject.FindObjectOfType<MainScript>().SpawnNewAsteroid = true;
-    }
-
-    public void Kill()
-    {
-        Debug.Log("Spawn mineral!");
     }
 }
