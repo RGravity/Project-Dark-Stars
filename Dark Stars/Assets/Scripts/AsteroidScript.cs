@@ -13,7 +13,8 @@ public class AsteroidScript : MonoBehaviour {
 
 
     public bool Hit { set { _hit = value; } }
-    
+    private int interval = 160;
+    public int MaxInterval = 160;
 
 	// Use this for initialization
 	void Start () {
@@ -24,6 +25,7 @@ public class AsteroidScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        Movement();
         CheckHit();
 
         if (colour.a < 1.0f)
@@ -32,9 +34,11 @@ public class AsteroidScript : MonoBehaviour {
             this.gameObject.GetComponent<MeshRenderer>().material.color = colour;
             _alphaTimer++;
         }
-
-        //Debug.Log(this.gameObject.GetComponent<MeshRenderer>().material.color.a);
 	}
+
+    void Movement()
+    {
+    }
 
     void CheckHit()
     {
@@ -60,7 +64,7 @@ public class AsteroidScript : MonoBehaviour {
 
     void SpawnNewAsteroid()
     {
-        GameObject.Find("Main").GetComponent<MainScript>().SpawnNewAsteroid = true;
+        GameObject.FindObjectOfType<MainScript>().SpawnNewAsteroid = true;
     }
 
     public void Kill()
