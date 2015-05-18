@@ -201,52 +201,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2101569826}
   m_RootOrder: 1
---- !u!1001 &1720570028
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 400000, guid: 992f620323aa4fb4994ac7b0ae63485f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 992f620323aa4fb4994ac7b0ae63485f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 992f620323aa4fb4994ac7b0ae63485f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 992f620323aa4fb4994ac7b0ae63485f, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 992f620323aa4fb4994ac7b0ae63485f, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 992f620323aa4fb4994ac7b0ae63485f, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 992f620323aa4fb4994ac7b0ae63485f, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 992f620323aa4fb4994ac7b0ae63485f, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6400000, guid: 992f620323aa4fb4994ac7b0ae63485f, type: 3}
-      propertyPath: m_Convex
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 992f620323aa4fb4994ac7b0ae63485f, type: 3}
-  m_IsPrefabParent: 0
 --- !u!1 &1872095693
 GameObject:
   m_ObjectHideFlags: 0
@@ -326,7 +280,6 @@ MonoBehaviour:
   MinDistanceToPlayer: 30
   MaxDistanceToPlayer: 500
   AsteroidsList:
-  - {fileID: 191796, guid: c9e25c6723ce4824baf26b242c040cbc, type: 2}
   - {fileID: 191796, guid: c9e25c6723ce4824baf26b242c040cbc, type: 2}
   - {fileID: 188482, guid: ed4cb3a4393804347975372bea0daa7e, type: 2}
   - {fileID: 118574, guid: 8dd2b025349e51941a95f6941df604f4, type: 2}
