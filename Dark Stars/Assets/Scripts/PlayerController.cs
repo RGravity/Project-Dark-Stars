@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour {
 
     void FixedUpdate()
     {
+        //Do all the stuff
         Movement();
         CheckHit();
     }

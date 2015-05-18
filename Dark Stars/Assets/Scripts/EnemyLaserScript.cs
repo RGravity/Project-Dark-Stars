@@ -25,6 +25,7 @@ public class EnemyLaserScript : MonoBehaviour {
         if (distance < LaserDistance && (Vector3.Angle(transform.forward, target.transform.position - transform.position) < angle))
         {
             StopCoroutine("FireLaser");
+            //Start Laser
             StartCoroutine("FireLaser");
         }
     }

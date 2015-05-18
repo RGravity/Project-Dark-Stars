@@ -17,6 +17,7 @@ public class MineralScript : MonoBehaviour {
     {
         if (other.gameObject == GameObject.Find("SpaceshipPlayer"))
         {
+            //Pick UP
             Debug.Log(gameObject.name + " picked up!");
             Destroy(gameObject); 
         }

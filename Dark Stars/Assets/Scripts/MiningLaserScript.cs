@@ -17,6 +17,7 @@ public class MiningLaserScript : MonoBehaviour {
         if (Input.GetButtonDown("Fire1"))
         {
             StopCoroutine("FireLaser");
+            //Start Shooting
             StartCoroutine("FireLaser");
         }
 	}

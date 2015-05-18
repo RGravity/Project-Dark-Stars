@@ -45,6 +45,7 @@ public class AsteroidScript : MonoBehaviour {
             Hit = false;
             if (HP <= 0)
             {
+                //Spawn Mineral, Destroy Asteroid and spawn a new one
                 Debug.Log("Asteroid Destroyed");
                 SpawnMineral();
                 SpawnNewAsteroid();
