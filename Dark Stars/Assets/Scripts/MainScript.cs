@@ -90,20 +90,33 @@ public class MainScript : MonoBehaviour
             SpawnMineral(1);
         }
 
-        //foreach (GameObject enemy in enemySpaceshipsInSpaceList)
-        //{
-        //    Vector3 spaceShipPosition = GameObject.Find("Spaceship").transform.position;
-        //    Vector3 enemyPosition = GameObject.Find(enemy.name).transform.position;
+        #region EnemyshipRespawn
+        List<string> tempEnemyDestroyedList = new List<string>();
+        foreach (string enemy in enemySpaceshipsInSpaceList)
+        {
+            Vector3 spaceShipPosition = GameObject.Find("Spaceship").transform.position;
+            Vector3 enemyPosition = GameObject.Find(enemy).transform.position;
 
-        //    Vector3 distanceDifference = enemyPosition - spaceShipPosition;
-        //    float lengthDifference = distanceDifference.magnitude;
+            Vector3 distanceDifference = enemyPosition - spaceShipPosition;
+            float lengthDifference = distanceDifference.magnitude;
 
-        //    if (lengthDifference > MaxDistanceToPlayer)
-        //    {
-        //        Destroy(GameObject.Find(enemy.name));
-        //        SpawnEnemyShip();
-        //    }
-        //}
+            if (lengthDifference > MaxDistanceToPlayer+100)
+            {
+                tempEnemyDestroyedList.Add(enemy);
+                
+            }
+        }
+        foreach (string enemyDestroyed in tempEnemyDestroyedList)
+        {
+            if (GameObject.Find(enemyDestroyed) != null)
+            {
+                enemySpaceshipsInSpaceList.Remove(enemyDestroyed);
+                SpawnEnemyShips(GameObject.Find(enemyDestroyed).GetComponentInChildren<EnemyScript>().Shiptype, 1);
+                GameObject.Find(enemyDestroyed).GetComponentInChildren<EnemyScript>().Boids.Remove(GameObject.Find(enemyDestroyed));
+                Destroy(GameObject.Find(enemyDestroyed));
+            }
+        }
+        #endregion
 
         #region AsteroidRespawn
         List<string> tempAsteroidDestroyedList = new List<string>();
@@ -358,18 +371,21 @@ public class MainScript : MonoBehaviour
                     go.transform.parent = parentSpaceShipEnemies.transform;
                     go.name = EnumEnemyShipType.speeder + "Enemy" + _numberOfEnemies;
                     go.GetComponentInChildren<EnemyScript>().Shiptype = EnumEnemyShipType.speeder;
+                    enemySpaceshipsInSpaceList.Add(go.name);
                     break;
                 case 1:
                     go = (GameObject)Instantiate(enemySpaceshipsList[1], new Vector3(enemyX, enemyY, enemyZ), Quaternion.identity);
                     go.transform.parent = parentSpaceShipEnemies.transform;
                     go.name = EnumEnemyShipType.assailant + "Enemy" + _numberOfEnemies;
                     go.GetComponentInChildren<EnemyScript>().Shiptype = EnumEnemyShipType.assailant;
+                    enemySpaceshipsInSpaceList.Add(go.name);
                     break;
                 case 2:
                     go = (GameObject)Instantiate(enemySpaceshipsList[2], new Vector3(enemyX, enemyY, enemyZ), Quaternion.identity);
                     go.transform.parent = parentSpaceShipEnemies.transform;
                     go.name = EnumEnemyShipType.bruiser + "Enemy" + _numberOfEnemies;
                     go.GetComponentInChildren<EnemyScript>().Shiptype = EnumEnemyShipType.bruiser;
+                    enemySpaceshipsInSpaceList.Add(go.name);
                     break;
                 default:
                     //default is SPEEDER
@@ -377,6 +393,7 @@ public class MainScript : MonoBehaviour
                     go.transform.parent = parentSpaceShipEnemies.transform;
                     go.name = EnumEnemyShipType.speeder + "Enemy" + _numberOfEnemies;
                     go.GetComponentInChildren<EnemyScript>().Shiptype = EnumEnemyShipType.speeder;
+                    enemySpaceshipsInSpaceList.Add(go.name);
                     break;
             }
 
@@ -446,7 +463,7 @@ public class MainScript : MonoBehaviour
                 Vector3 DistanceEnemyToSpaceship = EnemyPosition - spaceShipPosition;
                 lengthEnemyToSpaceship = DistanceEnemyToSpaceship.magnitude;
 
-            } while (lengthEnemyToSpaceship < MaxDistanceToPlayer);
+            } while (lengthEnemyToSpaceship < MinDistanceToPlayer);
 
             switch (enemyShipType)
             {
@@ -454,16 +471,19 @@ public class MainScript : MonoBehaviour
                     go = (GameObject)Instantiate(enemySpaceshipsList[0], new Vector3(enemyX, enemyY, enemyZ), Quaternion.identity);
                     go.transform.parent = parentSpaceShipEnemies.transform;
                     go.name = EnumEnemyShipType.speeder + "Enemy" + _numberOfEnemies;
+                    enemySpaceshipsInSpaceList.Add(go.name);
                     break;
                 case EnumEnemyShipType.assailant:
                     go = (GameObject)Instantiate(enemySpaceshipsList[1], new Vector3(enemyX, enemyY, enemyZ), Quaternion.identity);
                     go.transform.parent = parentSpaceShipEnemies.transform;
                     go.name = EnumEnemyShipType.assailant + "Enemy" + _numberOfEnemies;
+                    enemySpaceshipsInSpaceList.Add(go.name);
                     break;
                 case EnumEnemyShipType.bruiser:
                     go = (GameObject)Instantiate(enemySpaceshipsList[2], new Vector3(enemyX, enemyY, enemyZ), Quaternion.identity);
                     go.transform.parent = parentSpaceShipEnemies.transform;
                     go.name = EnumEnemyShipType.bruiser + "Enemy" + _numberOfEnemies;
+                    enemySpaceshipsInSpaceList.Add(go.name);
                     break;
                 default:
                     break;

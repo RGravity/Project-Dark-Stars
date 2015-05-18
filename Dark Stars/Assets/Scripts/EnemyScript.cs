@@ -15,6 +15,8 @@ public class EnemyScript : MonoBehaviour {
     public float EnemySpeed = 10.0f;
 
     List<GameObject> boids = new List<GameObject>();
+    public List<GameObject> Boids { get { return boids; } set { boids = value; } }
+    
 
     //HP
     private bool _hit = false;
