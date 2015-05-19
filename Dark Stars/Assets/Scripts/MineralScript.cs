@@ -19,6 +19,22 @@ public class MineralScript : MonoBehaviour {
         {
             //Pick UP
             Debug.Log(gameObject.name + " picked up!");
+            if (gameObject.name.Contains(EnumMinerals.xenonite1.ToString()))
+            {
+                
+            }
+            else if (gameObject.name.Contains(EnumMinerals.helionite2.ToString()))
+            {
+
+            }
+            else if (gameObject.name.Contains(EnumMinerals.argonite5.ToString()))
+            {
+
+            }
+            else if (gameObject.name.Contains(EnumMinerals.neonite10.ToString()))
+            {
+                
+            }
             Destroy(gameObject); 
         }
     }
