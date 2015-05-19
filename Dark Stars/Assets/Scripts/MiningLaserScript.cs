@@ -5,6 +5,10 @@ public class MiningLaserScript : MonoBehaviour {
 
     LineRenderer line;
     public int LaserDistance = 100;
+    private bool allowShoot = true;
+    public int MaxEnergy = 200;
+    private bool releasedButton = false;
+    private int energy = 200;
 
 	// Use this for initialization
 	void Start () {
@@ -14,19 +18,40 @@ public class MiningLaserScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && allowShoot)
         {
-            StopCoroutine("FireLaser");
             //Start Shooting
             StartCoroutine("FireLaser");
         }
+        else if (!Input.GetButton("Fire1") && allowShoot && energy <= MaxEnergy)
+        {
+            energy++;
+
+            if (energy > MaxEnergy)
+            {
+                energy = MaxEnergy;  
+            }
+        }
+
+        if (!allowShoot)
+        {
+            StopCoroutine("FireLaser");
+            line.enabled = false;
+            energy += 2;
+            if (energy > MaxEnergy)
+            {
+                energy = MaxEnergy;
+                allowShoot = true;
+            }
+        }
+        Debug.Log(energy);
 	}
 
     IEnumerator FireLaser()
     {
         line.enabled = true;
 
-        while (Input.GetButton("Fire1"))
+        while (Input.GetButton("Fire1") && allowShoot)
         {
             Ray ray = new Ray(transform.position, transform.forward);
             RaycastHit hit;
@@ -55,6 +80,11 @@ public class MiningLaserScript : MonoBehaviour {
             }
             else
                 line.SetPosition(1, ray.GetPoint(LaserDistance));
+            energy-= 2;
+            if (energy < 0)
+            {
+                allowShoot = false; 
+            }
 
             yield return null;
         }

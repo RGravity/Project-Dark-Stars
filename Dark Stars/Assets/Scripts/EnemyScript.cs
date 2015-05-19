@@ -15,6 +15,8 @@ public class EnemyScript : MonoBehaviour {
     public float EnemySpeed = 10.0f;
 
     List<GameObject> boids = new List<GameObject>();
+    public List<GameObject> Boids { get { return boids; } set { boids = value; } }
+    
 
     //HP
     private bool _hit = false;
@@ -36,9 +38,27 @@ public class EnemyScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //Enemy Movement
+        CheckBoids();
         EnemyMovement();
         CheckHit();
 	}
+
+    void CheckBoids()
+    {
+        foreach (GameObject boid in boids)
+        {
+            if (boid == null)
+            {
+                boids = new List<GameObject>();
+                GameObject[] boidsToAdd = GameObject.FindGameObjectsWithTag("Enemy");
+                for (int i = 0; i < boidsToAdd.Length; i++)
+                {
+                    boids.Add(boidsToAdd[i]);
+                }
+                return;
+            }
+        }
+    }
 
     void EnemyMovement()
     {

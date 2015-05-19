@@ -21,6 +21,11 @@ public class PlayerController : MonoBehaviour {
     private bool _hit = false;
     public int HP = 100;
 
+    //Score
+    private int _score = 0;
+    public int Score { get { return _score; } set { _score = value; } }
+
+
     public bool Hit { set { _hit = value; } }
 
     void Start()
