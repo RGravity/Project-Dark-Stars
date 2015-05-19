@@ -21,9 +21,9 @@ public class AsteroidScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         rb = gameObject.GetComponent<Rigidbody>();
-        colour = this.gameObject.GetComponent<MeshRenderer>().material.color;
-        colour.a = 0.00f;
-        this.gameObject.GetComponent<MeshRenderer>().material.color = colour;
+        //colour = this.gameObject.GetComponent<MeshRenderer>().material.color;
+        //colour.a = 0.00f;
+        //this.gameObject.GetComponent<MeshRenderer>().material.color = colour;
 	}
 	
 	// Update is called once per frame
@@ -31,12 +31,12 @@ public class AsteroidScript : MonoBehaviour {
         Movement();
         CheckHit();
 
-        if (colour.a < 1.0f)
-        {
-            colour.a = 0.00f + alphaIncrease;
-            this.gameObject.GetComponent<MeshRenderer>().material.color = colour;
-            _alphaTimer++;
-        }
+        //if (colour.a < 1.0f)
+        //{
+        //    colour.a = 0.00f + alphaIncrease;
+        //    this.gameObject.GetComponent<MeshRenderer>().material.color = colour;
+        //    _alphaTimer++;
+        //}
 	}
 
     void Movement()
