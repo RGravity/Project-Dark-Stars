@@ -38,9 +38,27 @@ public class EnemyScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //Enemy Movement
+        CheckBoids();
         EnemyMovement();
         CheckHit();
 	}
+
+    void CheckBoids()
+    {
+        foreach (GameObject boid in boids)
+        {
+            if (boid == null)
+            {
+                boids = new List<GameObject>();
+                GameObject[] boidsToAdd = GameObject.FindGameObjectsWithTag("Enemy");
+                for (int i = 0; i < boidsToAdd.Length; i++)
+                {
+                    boids.Add(boidsToAdd[i]);
+                }
+                return;
+            }
+        }
+    }
 
     void EnemyMovement()
     {

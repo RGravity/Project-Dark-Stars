@@ -276,9 +276,9 @@ MonoBehaviour:
   parentSpaceShip: {fileID: 2101569825}
   spaceShip: {fileID: 147768, guid: 13ccbd372f1c8ee4b8afee8d4fb4bc5c, type: 2}
   parentAsteroids: {fileID: 1603612045}
-  amountOfAsteroids: 500
+  amountOfAsteroids: 100
   MinDistanceToPlayer: 30
-  MaxDistanceToPlayer: 500
+  MaxDistanceToPlayer: 200
   AsteroidsList:
   - {fileID: 191796, guid: c9e25c6723ce4824baf26b242c040cbc, type: 2}
   - {fileID: 188482, guid: ed4cb3a4393804347975372bea0daa7e, type: 2}
@@ -293,8 +293,8 @@ MonoBehaviour:
   parentMinerals: {fileID: 1872095693}
   mineralsList:
   - {fileID: 131138, guid: 498e2f0dc824a6b46b2da5e136187823, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 131138, guid: 498e2f0dc824a6b46b2da5e136187823, type: 2}
+  - {fileID: 162798, guid: b2c839dce91b5124080ddfccab544837, type: 2}
   - {fileID: 162798, guid: b2c839dce91b5124080ddfccab544837, type: 2}
 --- !u!114 &2101569828
 MonoBehaviour:

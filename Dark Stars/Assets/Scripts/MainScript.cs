@@ -112,7 +112,10 @@ public class MainScript : MonoBehaviour
             {
                 enemySpaceshipsInSpaceList.Remove(enemyDestroyed);
                 SpawnEnemyShips(GameObject.Find(enemyDestroyed).GetComponentInChildren<EnemyScript>().Shiptype, 1);
-                GameObject.Find(enemyDestroyed).GetComponentInChildren<EnemyScript>().Boids.Remove(GameObject.Find(enemyDestroyed));
+                foreach (GameObject gb in GameObject.FindObjectOfType<EnemyScript>().Boids)
+                {
+                    gb.GetComponent<EnemyScript>().Boids.Remove(GameObject.Find(enemyDestroyed));
+                }
                 Destroy(GameObject.Find(enemyDestroyed));
             }
         }
