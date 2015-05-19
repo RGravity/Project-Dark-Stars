@@ -87,48 +87,6 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &116931354
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 400012, guid: 3508f4bba780aa940b2f0d2115d01c2b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -23.0548267
-      objectReference: {fileID: 0}
-    - target: {fileID: 400012, guid: 3508f4bba780aa940b2f0d2115d01c2b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 22.1375904
-      objectReference: {fileID: 0}
-    - target: {fileID: 400012, guid: 3508f4bba780aa940b2f0d2115d01c2b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 34.1699486
-      objectReference: {fileID: 0}
-    - target: {fileID: 400012, guid: 3508f4bba780aa940b2f0d2115d01c2b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400012, guid: 3508f4bba780aa940b2f0d2115d01c2b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400012, guid: 3508f4bba780aa940b2f0d2115d01c2b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400012, guid: 3508f4bba780aa940b2f0d2115d01c2b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400012, guid: 3508f4bba780aa940b2f0d2115d01c2b, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 3508f4bba780aa940b2f0d2115d01c2b, type: 3}
-  m_IsPrefabParent: 0
 --- !u!1 &811674561
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,7 +261,7 @@ Transform:
   - {fileID: 1075670748}
   - {fileID: 1872095694}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!114 &2101569827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,29 +274,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentSpaceShip: {fileID: 2101569825}
-  spaceShip: {fileID: 147768, guid: 13ccbd372f1c8ee4b8afee8d4fb4bc5c, type: 2}
+  spaceShip: {fileID: 119006, guid: 13ccbd372f1c8ee4b8afee8d4fb4bc5c, type: 2}
   parentAsteroids: {fileID: 1603612045}
-  amountOfAsteroids: 500
+  amountOfAsteroids: 200
   MinDistanceToPlayer: 30
   MaxDistanceToPlayer: 500
   AsteroidsList:
-  - {fileID: 162758, guid: c9e25c6723ce4824baf26b242c040cbc, type: 2}
-  - {fileID: 169090, guid: 7070715108eead64ba026f980cd62ddf, type: 2}
-  - {fileID: 187092, guid: ed4cb3a4393804347975372bea0daa7e, type: 2}
-  - {fileID: 110608, guid: 8dd2b025349e51941a95f6941df604f4, type: 2}
-  - {fileID: 198218, guid: 0efb0659bb0be5645ba6f6bf85018c25, type: 2}
+  - {fileID: 191796, guid: c9e25c6723ce4824baf26b242c040cbc, type: 2}
+  - {fileID: 188482, guid: ed4cb3a4393804347975372bea0daa7e, type: 2}
+  - {fileID: 118574, guid: 8dd2b025349e51941a95f6941df604f4, type: 2}
+  - {fileID: 175424, guid: 0efb0659bb0be5645ba6f6bf85018c25, type: 2}
   parentSpaceShipEnemies: {fileID: 1075670747}
   amountOfEnemies: 1
   enemySpaceshipsList:
-  - {fileID: 163422, guid: bfbf4d0b521c66649a2b8ea2ebe30f56, type: 2}
-  - {fileID: 126164, guid: 1eeea2f5bc9560948b41bbe252e0ccc5, type: 2}
-  - {fileID: 158024, guid: 1c88d55e52745004293f954fcfa6a4a2, type: 2}
+  - {fileID: 158798, guid: bfbf4d0b521c66649a2b8ea2ebe30f56, type: 2}
+  - {fileID: 136264, guid: 1eeea2f5bc9560948b41bbe252e0ccc5, type: 2}
+  - {fileID: 146876, guid: 1c88d55e52745004293f954fcfa6a4a2, type: 2}
   parentMinerals: {fileID: 1872095693}
   mineralsList:
-  - {fileID: 131138, guid: 498e2f0dc824a6b46b2da5e136187823, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 162798, guid: b2c839dce91b5124080ddfccab544837, type: 2}
+  - {fileID: 117984, guid: 498e2f0dc824a6b46b2da5e136187823, type: 2}
+  - {fileID: 153830, guid: 549eefadd3a64844399257f4ebc0c073, type: 2}
+  - {fileID: 148726, guid: b1dd890866901a842a5be7c4b0b83977, type: 2}
+  - {fileID: 163184, guid: b2c839dce91b5124080ddfccab544837, type: 2}
 --- !u!114 &2101569828
 MonoBehaviour:
   m_ObjectHideFlags: 0
