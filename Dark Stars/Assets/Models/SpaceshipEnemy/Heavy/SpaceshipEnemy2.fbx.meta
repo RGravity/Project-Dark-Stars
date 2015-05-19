@@ -44,6 +44,13 @@ ModelImporter:
     4300008: Canon_Right
     4300010: Canon_Left
     4300012: Canon_bases
+    6400000: Body
+    6400002: Canon_bases
+    6400004: Canon_Left
+    6400006: Canon_Right
+    6400008: Cockpits
+    6400010: Thrusters_Left
+    6400012: Thrusters_Right
     7400000: Default
     7400002: Turn Right
     7400004: LevelOut R
@@ -561,7 +568,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0

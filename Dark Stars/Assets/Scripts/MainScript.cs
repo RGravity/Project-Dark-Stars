@@ -534,7 +534,6 @@ public class MainScript : MonoBehaviour
             } while (!_mineralsAllowed.Contains(mineralType));
 
             GameObject go = (GameObject)Instantiate(ObjectToSpawn, _asteroidToDestroy.transform.position, _asteroidToDestroy.transform.rotation);
-            go.transform.localScale = new Vector3(2, 2, 2);
             go.transform.parent = parentMinerals.transform;
             go.name = mineralType + "Mineral" + _numberOfMinerals;
 
