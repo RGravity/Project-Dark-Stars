@@ -21,19 +21,19 @@ public class MineralScript : MonoBehaviour {
             Debug.Log(gameObject.name + " picked up!");
             if (gameObject.name.Contains(EnumMinerals.xenonite1.ToString()))
             {
-                
+                GameObject.FindObjectOfType<PlayerController>().Score += 1;
             }
             else if (gameObject.name.Contains(EnumMinerals.helionite2.ToString()))
             {
-
+                GameObject.FindObjectOfType<PlayerController>().Score += 2;
             }
             else if (gameObject.name.Contains(EnumMinerals.argonite5.ToString()))
             {
-
+                GameObject.FindObjectOfType<PlayerController>().Score += 5;
             }
             else if (gameObject.name.Contains(EnumMinerals.neonite10.ToString()))
             {
-                
+                GameObject.FindObjectOfType<PlayerController>().Score += 10;
             }
             Destroy(gameObject); 
         }
