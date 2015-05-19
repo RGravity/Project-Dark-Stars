@@ -278,7 +278,7 @@ MonoBehaviour:
   parentAsteroids: {fileID: 1603612045}
   amountOfAsteroids: 100
   MinDistanceToPlayer: 30
-  MaxDistanceToPlayer: 200
+  MaxDistanceToPlayer: 250
   AsteroidsList:
   - {fileID: 191796, guid: c9e25c6723ce4824baf26b242c040cbc, type: 2}
   - {fileID: 188482, guid: ed4cb3a4393804347975372bea0daa7e, type: 2}
@@ -288,14 +288,14 @@ MonoBehaviour:
   amountOfEnemies: 1
   enemySpaceshipsList:
   - {fileID: 158798, guid: bfbf4d0b521c66649a2b8ea2ebe30f56, type: 2}
-  - {fileID: 113562, guid: 1eeea2f5bc9560948b41bbe252e0ccc5, type: 2}
-  - {fileID: 160250, guid: 1c88d55e52745004293f954fcfa6a4a2, type: 2}
+  - {fileID: 136264, guid: 1eeea2f5bc9560948b41bbe252e0ccc5, type: 2}
+  - {fileID: 139858, guid: 1c88d55e52745004293f954fcfa6a4a2, type: 2}
   parentMinerals: {fileID: 1872095693}
   mineralsList:
-  - {fileID: 131138, guid: 498e2f0dc824a6b46b2da5e136187823, type: 2}
-  - {fileID: 131138, guid: 498e2f0dc824a6b46b2da5e136187823, type: 2}
-  - {fileID: 162798, guid: b2c839dce91b5124080ddfccab544837, type: 2}
-  - {fileID: 162798, guid: b2c839dce91b5124080ddfccab544837, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &2101569828
 MonoBehaviour:
   m_ObjectHideFlags: 0
