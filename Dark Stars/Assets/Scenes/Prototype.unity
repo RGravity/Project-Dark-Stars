@@ -502,7 +502,7 @@ MonoBehaviour:
   parentAsteroids: {fileID: 1603612045}
   amountOfAsteroids: 100
   MinDistanceToPlayer: 30
-  MaxDistanceToPlayer: 250
+  MaxDistanceToPlayer: 300
   AsteroidsList:
   - {fileID: 191796, guid: c9e25c6723ce4824baf26b242c040cbc, type: 2}
   - {fileID: 188482, guid: ed4cb3a4393804347975372bea0daa7e, type: 2}
