@@ -287,15 +287,15 @@ MonoBehaviour:
   parentSpaceShipEnemies: {fileID: 1075670747}
   amountOfEnemies: 1
   enemySpaceshipsList:
-  - {fileID: 102844, guid: a79199adfd3992c42a04c6a52e474a5c, type: 2}
-  - {fileID: 102844, guid: a79199adfd3992c42a04c6a52e474a5c, type: 2}
-  - {fileID: 102844, guid: a79199adfd3992c42a04c6a52e474a5c, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   parentMinerals: {fileID: 1872095693}
   mineralsList:
-  - {fileID: 131138, guid: 498e2f0dc824a6b46b2da5e136187823, type: 2}
-  - {fileID: 131138, guid: 498e2f0dc824a6b46b2da5e136187823, type: 2}
-  - {fileID: 162798, guid: b2c839dce91b5124080ddfccab544837, type: 2}
-  - {fileID: 162798, guid: b2c839dce91b5124080ddfccab544837, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &2101569828
 MonoBehaviour:
   m_ObjectHideFlags: 0

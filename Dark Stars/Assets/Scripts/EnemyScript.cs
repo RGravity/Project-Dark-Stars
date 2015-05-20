@@ -131,6 +131,20 @@ public class EnemyScript : MonoBehaviour {
             {
                 Debug.Log("Enemy " + gameObject.name + " Killed");
                 boids.Remove(gameObject);
+
+                PlayerController Player = GameObject.FindObjectOfType<PlayerController>();
+                if (gameObject.name.Contains(EnumEnemyShipType.speeder.ToString()))
+                {
+                    Player.AmountOfKilledSpeeders += 1;
+                }
+                else if (gameObject.name.Contains(EnumEnemyShipType.assailant.ToString()))
+                {
+                    Player.AmountOfKilledAssailants += 1;
+                }
+                else if (gameObject.name.Contains(EnumEnemyShipType.bruiser.ToString()))
+                {
+                    Player.AmountOfKilledBruisers += 1;
+                }
                 Destroy(gameObject);
             }
         }
