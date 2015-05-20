@@ -22,7 +22,6 @@ public class EnemyLaserScript : MonoBehaviour {
         string EnemyID = name.Substring(name.Length - 1);
 
         ParticleSystem[] ParticleSystems = GameObject.FindObjectsOfType<ParticleSystem>();
-
         for (int i = 0; i < ParticleSystems.Length; i++)
         {
             if (ParticleSystems[i].name.Contains(EnemyID))
@@ -92,10 +91,8 @@ public class EnemyLaserScript : MonoBehaviour {
             distance = Vector3.Distance(target.transform.position, parent.position);
             yield return null;
         }
-        if (laserParticle.isPlaying)
-            laserParticle.Stop();
-        if (laserParticle2.isPlaying)
-            laserParticle2.Stop();
+        laserParticle.Stop();
+        laserParticle2.Stop();
         line.enabled = false;
         gameObject.GetComponent<LineRenderer>().useWorldSpace = false;
     }
