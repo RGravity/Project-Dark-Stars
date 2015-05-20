@@ -131,7 +131,6 @@ public class PlayerController : MonoBehaviour {
         if (_hit)
         {
             HP--;
-            //Debug.Log("Your HP is lowered to: " + HP);
             Hit = false;
             if (HP <= 0)
             {

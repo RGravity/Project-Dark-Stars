@@ -18,7 +18,6 @@ public class LevelEditorMain : MonoBehaviour {
         MaxLevels = LevelScript.amountOfLevels;
 
         skyboxList = Resources.LoadAll("Skybox");
-        Debug.Log("skyboxes" + skyboxList.Length);
 	}
 	
 	// Update is called once per frame
@@ -106,7 +105,7 @@ public class LevelEditorMain : MonoBehaviour {
 
     public void changeRandomSkybox()
     {
-        switch (Random.Range(0, 2))
+        switch (Random.Range(0, 3))
         {
             case 0:
                 RenderSettings.skybox = (Material)skyboxList[0];
