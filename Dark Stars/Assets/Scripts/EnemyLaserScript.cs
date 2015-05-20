@@ -8,6 +8,9 @@ public class EnemyLaserScript : MonoBehaviour {
     private GameObject target;
     private Transform parent;
     private float angle = 25;
+    private string name = "";
+    private ParticleSystem laserParticle;
+    private ParticleSystem laserParticle2;
 
 	// Use this for initialization
 	void Start () {
@@ -15,7 +18,24 @@ public class EnemyLaserScript : MonoBehaviour {
         line.enabled = false;
         target = GameObject.FindGameObjectWithTag("Player");
         parent = gameObject.transform.parent;
-        
+        name = gameObject.name;
+
+        ParticleSystem[] ParticleSystems = GameObject.FindObjectsOfType<ParticleSystem>();
+
+        for (int i = 0; i < ParticleSystems.Length; i++)
+        {
+            if (name.EndsWith(ParticleSystems[i].name))
+            {
+                if (ParticleSystems[i].name.Contains("Laser"))
+                {
+                    laserParticle = ParticleSystems[i];
+                }
+                if (ParticleSystems[i].name.Contains("Core"))
+                {
+                    laserParticle2 = ParticleSystems[i];
+                }
+            }
+        }
 	}
 	
 	// Update is called once per frame
@@ -37,6 +57,8 @@ public class EnemyLaserScript : MonoBehaviour {
         float distance = Vector3.Distance(target.transform.position, parent.position);
         while (distance < LaserDistance && (Vector3.Angle(transform.forward, target.transform.position - transform.position) < angle))
         {
+            laserParticle.Play();
+            laserParticle2.Play();
             Vector3 GunTip = GameObject.Find("GunTip Point").transform.position;
             gameObject.GetComponent<LineRenderer>().useWorldSpace = true;
             Ray ray = new Ray(GunTip, transform.forward);
@@ -69,7 +91,10 @@ public class EnemyLaserScript : MonoBehaviour {
             distance = Vector3.Distance(target.transform.position, parent.position);
             yield return null;
         }
-
+        if (laserParticle.isPlaying)
+            laserParticle.Stop();
+        if (laserParticle2.isPlaying)
+            laserParticle2.Stop();
         line.enabled = false;
         gameObject.GetComponent<LineRenderer>().useWorldSpace = false;
     }
