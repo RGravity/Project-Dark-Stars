@@ -48,7 +48,6 @@ public class MiningLaserScript : MonoBehaviour {
                 allowShoot = true;
             }
         }
-        //Debug.Log(energy);
 	}
 
     IEnumerator FireLaser()
@@ -77,7 +76,6 @@ public class MiningLaserScript : MonoBehaviour {
                     }
                     else if (hit.collider.gameObject.tag.Contains("Enemy"))
                     {
-                        Debug.Log("Enemy Hit");
                         hit.rigidbody.AddForceAtPosition(transform.forward * 10, hit.point);
                         EnemyScript enemyHit = hit.collider.gameObject.GetComponentInParent<EnemyScript>();
                         enemyHit.Hit = true;

@@ -18,7 +18,6 @@ public class LevelEditorMain : MonoBehaviour {
         MaxLevels = LevelScript.amountOfLevels;
 
         skyboxList = Resources.LoadAll("Skybox");
-        Debug.Log("skyboxes" + skyboxList.Length);
 	}
 	
 	// Update is called once per frame

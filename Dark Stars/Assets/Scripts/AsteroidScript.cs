@@ -18,23 +18,15 @@ public class AsteroidScript : MonoBehaviour {
     float thrust = 1000;
     Rigidbody rb;
 
-    private ParticleSystem Dust1;
-    private ParticleSystem Dust2;
-
 	// Use this for initialization
 	void Start () {
         rb = gameObject.GetComponent<Rigidbody>();
-
-        ParticleSystem[] ParticleSystems = gameObject.GetComponentsInChildren<ParticleSystem>();
-        Dust1 = ParticleSystems[0];
-        Dust2 = ParticleSystems[1];
 	}
 	
 	// Update is called once per frame
 	void Update () {
         Movement();
         CheckHit();
-        Debug.Log(HP);
 	}
 
     void Movement()
@@ -47,13 +39,7 @@ public class AsteroidScript : MonoBehaviour {
         if (_hit)
         {
             HP--;
-            //Debug.Log("Asteroid HP is lowered to: " + HP);
             Hit = false;
-            if (HP <= 40)
-            {
-                Dust1.Play();
-                Dust2.Play();
-            }
             if (HP <= 0)
             {
                 //Spawn Mineral, Destroy Asteroid and spawn a new one
@@ -71,5 +57,14 @@ public class AsteroidScript : MonoBehaviour {
     void SpawnNewAsteroid()
     {
         GameObject.FindObjectOfType<MainScript>().SpawnNewAsteroid = true;
+    }
+
+    void OnDestroy()
+    {
+        if (HP <= 0)
+        {
+            GameObject.Find("Dust").transform.position = gameObject.transform.position;
+            GameObject.Find("Dust").GetComponent<DustScript>().ActivateAnimation = true;
+        }
     }
 }

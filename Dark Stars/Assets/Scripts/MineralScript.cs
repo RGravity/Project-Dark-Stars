@@ -19,7 +19,6 @@ public class MineralScript : MonoBehaviour {
         {
             PlayerController Player = GameObject.FindObjectOfType<PlayerController>();
             //Pick UP
-            Debug.Log(gameObject.name + " picked up!");
             if (gameObject.name.Contains(EnumMinerals.xenonite1.ToString()))
             {
                 Player.Score += 1;

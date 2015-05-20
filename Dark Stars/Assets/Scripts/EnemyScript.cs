@@ -125,11 +125,9 @@ public class EnemyScript : MonoBehaviour {
         if (_hit)
         {
             HP--;
-            Debug.Log("Enemy " + gameObject.name + " HP is lowered to: " + HP);
             Hit = false;
             if (HP <= 0)
             {
-                Debug.Log("Enemy " + gameObject.name + " Killed");
                 boids.Remove(gameObject);
 
                 PlayerController Player = GameObject.FindObjectOfType<PlayerController>();

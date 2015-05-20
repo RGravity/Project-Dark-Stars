@@ -20,12 +20,12 @@ public class LevelEditorScript : MonoBehaviour {
         switch(level){
             case 1: //level 1
                 main.setMinDistanceToPlayer(30);
-                main.setMaxDistanceToPlayer(400);
-                main.spawnAsteroids(50);
-                main.spawnEnemies(EnumEnemyShipType.speeder, 1);
-                main.spawnEnemies(EnumEnemyShipType.assailant, 2);
+                main.setMaxDistanceToPlayer(350);
+                main.spawnAsteroids(100);
+                main.spawnEnemy(EnumEnemyShipType.speeder);
+                main.spawnEnemies(EnumEnemyShipType.assailant, 1);
                 main.spawnEnemy(EnumEnemyShipType.bruiser);
-                main.setMinerals(false, true, false, true);
+                main.setMinerals(true, true, true, true);
                 //   -----   skybox    -----
                 //main.changeSkybox(EnumSkybox.skyboxRedBlack);
                 main.changeRandomSkybox();
