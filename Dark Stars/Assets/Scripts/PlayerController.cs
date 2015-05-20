@@ -20,13 +20,29 @@ public class PlayerController : MonoBehaviour {
     //HP
     private bool _hit = false;
     public int HP = 100;
+    public bool Hit { set { _hit = value; } }
 
     //Score
     private int _score = 0;
+    private int _amountOfXenonite = 0;
+    private int _amountOfHelionite = 0;
+    private int _amountOfArgonite = 0;
+    private int _amountOfNeonite = 0;
+    private int _timeElapsed = 0;
+    private int _amountOfKilledSpeeders = 0;
+    private int _amountOfKilledAssailants = 0;
+    private int _amountOfKilledBruisers = 0;
+
     public int Score { get { return _score; } set { _score = value; } }
+    public int AmountOfXenonite { get { return _amountOfXenonite; } set { _amountOfXenonite = value; } }
+    public int AmountOfHelionite { get { return _amountOfHelionite; } set { _amountOfHelionite = value; } }
+    public int AmountOfArgonite { get { return _amountOfArgonite; } set { _amountOfArgonite = value; } }
+    public int AmountOfNeonite { get { return _amountOfNeonite; } set { _amountOfNeonite = value; } }
+    public int TimeElapsed { get { return _timeElapsed; } set { _timeElapsed = value; } }
+    public int AmountOfKilledSpeeders { get { return _amountOfKilledSpeeders; } set { _amountOfKilledSpeeders = value; } }
+    public int AmountOfKilledAssailants { get { return _amountOfKilledAssailants; } set { _amountOfKilledAssailants = value; } }
+    public int AmountOfKilledBruisers { get { return _amountOfKilledBruisers; } set { _amountOfKilledBruisers = value; } }
 
-
-    public bool Hit { set { _hit = value; } }
 
     void Start()
     {
