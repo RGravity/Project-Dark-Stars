@@ -14,8 +14,8 @@ SceneSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 6
-  m_Fog: 0
-  m_FogColor: {r: .5, g: .5, b: .5, a: 1}
+  m_Fog: 1
+  m_FogColor: {r: .426254153, g: .284656107, b: .992647052, a: 1}
   m_FogMode: 3
   m_FogDensity: .00999999978
   m_LinearFogStart: 0
@@ -274,29 +274,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentSpaceShip: {fileID: 2101569825}
-  spaceShip: {fileID: 147768, guid: 13ccbd372f1c8ee4b8afee8d4fb4bc5c, type: 2}
+  spaceShip: {fileID: 131750, guid: 13ccbd372f1c8ee4b8afee8d4fb4bc5c, type: 2}
   parentAsteroids: {fileID: 1603612045}
-  amountOfAsteroids: 500
+  amountOfAsteroids: 150
   MinDistanceToPlayer: 30
-  MaxDistanceToPlayer: 500
+  MaxDistanceToPlayer: 450
   AsteroidsList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 191796, guid: c9e25c6723ce4824baf26b242c040cbc, type: 2}
+  - {fileID: 188482, guid: ed4cb3a4393804347975372bea0daa7e, type: 2}
+  - {fileID: 118574, guid: 8dd2b025349e51941a95f6941df604f4, type: 2}
+  - {fileID: 175424, guid: 0efb0659bb0be5645ba6f6bf85018c25, type: 2}
   parentSpaceShipEnemies: {fileID: 1075670747}
   amountOfEnemies: 1
   enemySpaceshipsList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 143532, guid: af9e55565cb1d854390a907797159542, type: 2}
+  - {fileID: 123102, guid: 963d1f2c3b78baf4f9193f9f459530b0, type: 2}
+  - {fileID: 151558, guid: baeca572618ea6b40b81735f35b5de00, type: 2}
   parentMinerals: {fileID: 1872095693}
   mineralsList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 117984, guid: 498e2f0dc824a6b46b2da5e136187823, type: 2}
+  - {fileID: 153830, guid: 549eefadd3a64844399257f4ebc0c073, type: 2}
+  - {fileID: 148726, guid: b1dd890866901a842a5be7c4b0b83977, type: 2}
+  - {fileID: 163184, guid: b2c839dce91b5124080ddfccab544837, type: 2}
 --- !u!114 &2101569828
 MonoBehaviour:
   m_ObjectHideFlags: 0
