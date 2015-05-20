@@ -19,12 +19,13 @@ public class EnemyLaserScript : MonoBehaviour {
         target = GameObject.FindGameObjectWithTag("Player");
         parent = gameObject.transform.parent;
         name = gameObject.name;
+        string EnemyID = name.Substring(name.Length - 1);
 
         ParticleSystem[] ParticleSystems = GameObject.FindObjectsOfType<ParticleSystem>();
 
         for (int i = 0; i < ParticleSystems.Length; i++)
         {
-            if (name.EndsWith(ParticleSystems[i].name))
+            if (ParticleSystems[i].name.Contains(EnemyID))
             {
                 if (ParticleSystems[i].name.Contains("Laser"))
                 {

@@ -21,7 +21,7 @@ public class LevelEditorScript : MonoBehaviour {
             case 1: //level 1
                 main.setMinDistanceToPlayer(30);
                 main.setMaxDistanceToPlayer(400);
-                main.spawnAsteroids(200);
+                main.spawnAsteroids(50);
                 main.spawnEnemies(EnumEnemyShipType.speeder, 1);
                 main.spawnEnemies(EnumEnemyShipType.assailant, 2);
                 main.spawnEnemy(EnumEnemyShipType.bruiser);

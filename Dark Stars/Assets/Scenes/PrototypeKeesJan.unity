@@ -276,14 +276,14 @@ MonoBehaviour:
   parentSpaceShip: {fileID: 2101569825}
   spaceShip: {fileID: 131750, guid: 13ccbd372f1c8ee4b8afee8d4fb4bc5c, type: 2}
   parentAsteroids: {fileID: 1603612045}
-  amountOfAsteroids: 150
+  amountOfAsteroids: 50
   MinDistanceToPlayer: 30
-  MaxDistanceToPlayer: 450
+  MaxDistanceToPlayer: 250
   AsteroidsList:
-  - {fileID: 191796, guid: c9e25c6723ce4824baf26b242c040cbc, type: 2}
-  - {fileID: 188482, guid: ed4cb3a4393804347975372bea0daa7e, type: 2}
-  - {fileID: 118574, guid: 8dd2b025349e51941a95f6941df604f4, type: 2}
-  - {fileID: 175424, guid: 0efb0659bb0be5645ba6f6bf85018c25, type: 2}
+  - {fileID: 147158, guid: c9e25c6723ce4824baf26b242c040cbc, type: 2}
+  - {fileID: 144736, guid: ed4cb3a4393804347975372bea0daa7e, type: 2}
+  - {fileID: 180922, guid: 8dd2b025349e51941a95f6941df604f4, type: 2}
+  - {fileID: 178684, guid: 0efb0659bb0be5645ba6f6bf85018c25, type: 2}
   parentSpaceShipEnemies: {fileID: 1075670747}
   amountOfEnemies: 1
   enemySpaceshipsList:

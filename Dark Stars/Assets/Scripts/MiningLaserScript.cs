@@ -48,7 +48,7 @@ public class MiningLaserScript : MonoBehaviour {
                 allowShoot = true;
             }
         }
-        Debug.Log(energy);
+        //Debug.Log(energy);
 	}
 
     IEnumerator FireLaser()
