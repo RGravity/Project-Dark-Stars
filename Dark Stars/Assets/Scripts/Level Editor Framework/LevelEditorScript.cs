@@ -26,6 +26,9 @@ public class LevelEditorScript : MonoBehaviour {
                 main.spawnEnemies(EnumEnemyShipType.assailant, 2);
                 main.spawnEnemy(EnumEnemyShipType.bruiser);
                 main.setMinerals(false, true, false, true);
+                //   -----   skybox    -----
+                //main.changeSkybox(EnumSkybox.skyboxRedBlack);
+                main.changeRandomSkybox();
                 break;
             case 2: //level 2
                 break;

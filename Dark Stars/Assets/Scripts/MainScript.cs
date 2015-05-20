@@ -17,6 +17,13 @@ public enum EnumMinerals
     neonite10,
 }
 
+public enum EnumSkybox
+{
+    skyboxBlue,
+    skyboxGreen,
+    skyboxRedBlack,
+}
+
 public class MainScript : MonoBehaviour
 {
 

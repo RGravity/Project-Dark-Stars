@@ -9,12 +9,16 @@ public class LevelEditorMain : MonoBehaviour {
     private bool _nextlevelToLoad = true;
     public bool NextLevelToLoad { set { _nextlevelToLoad = value; } }
     private int MaxLevels;
+    Object[] skyboxList = new Object[]{};
 
 	// Use this for initialization
 	void Start () {
         mainScript = GameObject.Find("Main").GetComponent<MainScript>();
         LevelScript = GameObject.Find("Main").GetComponent<LevelEditorScript>();
         MaxLevels = LevelScript.amountOfLevels;
+
+        skyboxList = Resources.LoadAll("Skybox");
+        Debug.Log("skyboxes" + skyboxList.Length);
 	}
 	
 	// Update is called once per frame
@@ -78,6 +82,46 @@ public class LevelEditorMain : MonoBehaviour {
     public void setMinDistanceToPlayer(int distance)
     {
         mainScript.MinDistanceToPlayer = distance;
+    }
+
+    public void changeSkybox(EnumSkybox skybox)
+    {
+        switch (skybox)
+        {
+            case EnumSkybox.skyboxBlue:
+                RenderSettings.skybox = (Material)skyboxList[0];
+                break;
+            case EnumSkybox.skyboxGreen:
+                RenderSettings.skybox = (Material)skyboxList[1];
+                break;
+            case EnumSkybox.skyboxRedBlack:
+                RenderSettings.skybox = (Material)skyboxList[2];
+                break;
+            default:
+                //default = blue skybox
+                RenderSettings.skybox = (Material)skyboxList[0];
+                break;
+        }
+    }
+
+    public void changeRandomSkybox()
+    {
+        switch (Random.Range(0, 2))
+        {
+            case 0:
+                RenderSettings.skybox = (Material)skyboxList[0];
+                break;
+            case 1:
+                RenderSettings.skybox = (Material)skyboxList[1];
+                break;
+            case 2:
+                RenderSettings.skybox = (Material)skyboxList[2];
+                break;
+            default:
+                //default = blue skybox
+                RenderSettings.skybox = (Material)skyboxList[0];
+                break;
+        }
     }
 
     
