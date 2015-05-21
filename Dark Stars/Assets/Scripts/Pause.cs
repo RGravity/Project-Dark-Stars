@@ -6,6 +6,7 @@ public class Pause : MonoBehaviour
 {
 
     private bool pauseGame = false;
+    public bool allowUnpause = false;
     private bool showGUI = false;
 
     void Update()
@@ -18,20 +19,21 @@ public class Pause : MonoBehaviour
             {
                 Time.timeScale = 0;
                 pauseGame = true;
+                allowUnpause = true;
                 showGUI = true;
             }
         }
 
-        if (pauseGame == false)
+        if (pauseGame == false && allowUnpause == true)
         {
             Time.timeScale = 1;
             pauseGame = false;
+            allowUnpause = false;
             showGUI = false;
         }
 
         if (showGUI == true)
         {
-           
             GameObject.Find("Pause").GetComponent<Image>().enabled = true;
         }
         else

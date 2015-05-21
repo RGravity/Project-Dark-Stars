@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour {
     public bool Hit { set { _hit = value; } }
 
     //damageScreen
-    private Color _damageScreenColor ;// GameObject.Find("DamageScreen").GetComponent<Image>().color;
+    private Color _damageScreenColor ;// 
     private float _alphaIncrease = 255 / 100;
 
     //Score
@@ -38,6 +38,9 @@ public class PlayerController : MonoBehaviour {
     private int _amountOfKilledAssailants = 0;
     private int _amountOfKilledBruisers = 0;
     private float _amountCrystalFill = 0;
+
+    private bool _showDamage = false;
+    private int _timer = 72;
 
     private Image _cristalFillImage;
     private Image cristalFillImage
@@ -73,9 +76,9 @@ public class PlayerController : MonoBehaviour {
 
     void Start()
     {
-        _damageScreenColor.a = 0;
-        GameObject.Find("DamageScreen").GetComponent<Image>().color = _damageScreenColor;
+        _damageScreenColor = GameObject.Find("DamageScreen").GetComponent<Image>().color;
         speed = cruiseSpeed;
+        GameObject.Find("DamageScreen").GetComponent<Image>().enabled = false;
     }
 
     void FixedUpdate()
@@ -161,8 +164,9 @@ public class PlayerController : MonoBehaviour {
         {
             HP--;
 
-            _damageScreenColor.a += _alphaIncrease;
-            GameObject.Find("DamageScreen").GetComponent<Image>().color = _damageScreenColor;
+            _showDamage = true;
+            GameObject.Find("DamageScreen").GetComponent<Image>().enabled = true;
+
 
             Hit = false;
             if (HP <= 0)
@@ -170,10 +174,14 @@ public class PlayerController : MonoBehaviour {
                 GameObject.FindObjectOfType<YouFailScript>().YouDiedBool = true;
             }
         }
-    }
-
-    void OnCollisionEnter(Collision collision)
-    {
-        _hit = true;
+        if (_showDamage)
+        {
+            _timer--;
+            if (_timer <= 0)
+            {
+                GameObject.Find("DamageScreen").GetComponent<Image>().enabled = false;
+                _timer = 72;
+            }
+        }
     }
 }

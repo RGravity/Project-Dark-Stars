@@ -18,6 +18,7 @@ public class YouFailScript : MonoBehaviour {
 	void Update () {
         if (youDied)
         {
+            GameObject.FindObjectOfType<Pause>().allowUnpause = false;
             Time.timeScale = 0;
             youDied = true;
             showGUI = true;

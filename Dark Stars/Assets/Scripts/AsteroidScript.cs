@@ -66,4 +66,12 @@ public class AsteroidScript : MonoBehaviour {
             GameObject.Find("Dust").GetComponent<DustScript>().ActivateAnimation = true;
         }
     }
+
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.collider.gameObject.tag == "Hit")
+        {
+            GameObject.FindObjectOfType<PlayerController>().Hit = true; 
+        }
+    }
 }
