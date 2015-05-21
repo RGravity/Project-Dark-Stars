@@ -12,7 +12,7 @@ public class EnemyScript : MonoBehaviour {
 
     Vector3 acceleration;
     Vector3 velocty;
-    public float EnemySpeed = 10.0f;
+    public float EnemySpeed;
 
     List<GameObject> boids = new List<GameObject>();
     public List<GameObject> Boids { get { return boids; } set { boids = value; } }
@@ -20,7 +20,7 @@ public class EnemyScript : MonoBehaviour {
 
     //HP
     private bool _hit = false;
-    public int HP = 100;
+    public int HP;
 
     public bool Hit { set { _hit = value; } }
 
