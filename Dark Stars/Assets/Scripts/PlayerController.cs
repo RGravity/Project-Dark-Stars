@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class PlayerController : MonoBehaviour {
@@ -32,6 +33,28 @@ public class PlayerController : MonoBehaviour {
     private int _amountOfKilledSpeeders = 0;
     private int _amountOfKilledAssailants = 0;
     private int _amountOfKilledBruisers = 0;
+    private float _amountCrystalFill = 0;
+
+    private Image _cristalFillImage;
+    private Image cristalFillImage
+    {
+        get
+        {
+            if (_cristalFillImage == null)
+                _cristalFillImage = GameObject.Find("crystalFill").GetComponent<Image>();
+            return _cristalFillImage;
+        }
+    }
+
+    public float AmountCrystalFill
+    {
+        get { return _amountCrystalFill; }
+        set
+        {
+            cristalFillImage.fillAmount = value / 100;
+            _amountCrystalFill = value;
+        }
+    }
 
     public int Score { get { return _score; } set { _score = value; } }
     public int AmountOfXenonite { get { return _amountOfXenonite; } set { _amountOfXenonite = value; } }

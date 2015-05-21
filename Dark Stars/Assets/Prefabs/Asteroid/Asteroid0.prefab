@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 50
+  mineral: {fileID: 11423580, guid: 498e2f0dc824a6b46b2da5e136187823, type: 2}
   MaxInterval: 160
 --- !u!1001 &100100000
 Prefab:

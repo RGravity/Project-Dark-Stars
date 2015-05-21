@@ -1,45 +1,41 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
-public class MineralScript : MonoBehaviour {
+public class MineralScript : MonoBehaviour
+{
+    [SerializeField]
+    private int scoreAmount;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	     
-	}
+    [SerializeField]
+    private int amountOfXenonite;
+    
+    [SerializeField]
+    private int amountOfHelionite;
+    
+    [SerializeField]
+    private int amountOfArgonite;
+    
+    [SerializeField]
+    private int amountOfNeonite;
+
+    [SerializeField]
+    private float cristalAmount;
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == GameObject.Find("SpaceshipPlayer"))
-        {
-            PlayerController Player = GameObject.FindObjectOfType<PlayerController>();
-            //Pick UP
-            if (gameObject.name.Contains(EnumMinerals.xenonite1.ToString()))
-            {
-                Player.Score += 1;
-                Player.AmountOfXenonite += 1;
-            }
-            else if (gameObject.name.Contains(EnumMinerals.helionite2.ToString()))
-            {
-                Player.Score += 2;
-                Player.AmountOfHelionite += 1;
-            }
-            else if (gameObject.name.Contains(EnumMinerals.argonite5.ToString()))
-            {
-                Player.Score += 5;
-                Player.AmountOfArgonite += 1;
-            }
-            else if (gameObject.name.Contains(EnumMinerals.neonite10.ToString()))
-            {
-                Player.Score += 10;
-                Player.AmountOfNeonite += 1;
-            }
-            Destroy(gameObject); 
-        }
+        PlayerController playerController = other.GetComponent<PlayerController>();
+
+        if (playerController == null)
+            return;
+
+        playerController.Score += scoreAmount;
+        playerController.AmountOfXenonite += amountOfXenonite;
+        playerController.AmountOfHelionite += amountOfHelionite;
+        playerController.AmountOfArgonite += amountOfArgonite;
+        playerController.AmountOfNeonite += amountOfNeonite;
+        playerController.AmountCrystalFill += cristalAmount;
+
+        Destroy(gameObject);
     }
 }

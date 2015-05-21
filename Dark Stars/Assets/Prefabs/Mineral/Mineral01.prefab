@@ -131,6 +131,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66c1cbb6e590d5f4e92e2632d9ff807f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreAmount: 1
+  amountOfXenonite: 1
+  amountOfHelionite: 0
+  amountOfArgonite: 0
+  amountOfNeonite: 0
+  cristalAmount: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

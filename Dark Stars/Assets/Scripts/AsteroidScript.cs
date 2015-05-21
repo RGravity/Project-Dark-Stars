@@ -11,7 +11,6 @@ public class AsteroidScript : MonoBehaviour {
     private int _alphaTimer = 0; // 0 - 255
     private Color colour;
 
-
     public bool Hit { set { _hit = value; } }
     public int MaxInterval = 160;
 
