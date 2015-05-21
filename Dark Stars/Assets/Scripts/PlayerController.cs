@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour {
     public bool Hit { set { _hit = value; } }
 
     //damageScreen
-    private Color _damageScreenColor = GameObject.Find("DamageScreen").GetComponent<Image>().color;
+    private Color _damageScreenColor ;// GameObject.Find("DamageScreen").GetComponent<Image>().color;
     private float _alphaIncrease = 255 / 100;
 
     //Score

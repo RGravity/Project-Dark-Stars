@@ -38,7 +38,7 @@ public class MainScript : MonoBehaviour
 
     //Player
     public GameObject parentSpaceShip;
-    public Object spaceShip;
+    public GameObject spaceShip;
 
     //Asteroids
     public GameObject parentAsteroids;
@@ -154,10 +154,11 @@ public class MainScript : MonoBehaviour
 
     void SpawnPlayerShip()
     {
-        GameObject go = (GameObject)Instantiate(spaceShip, new Vector3(0, 0, 0), Quaternion.identity);
+        GameObject go;
+        go = Instantiate(spaceShip, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
         go.transform.parent = parentSpaceShip.transform;
         go.name = "Spaceship";
-        go.GetComponentInChildren<Camera>().farClipPlane = MaxDistanceToPlayer - 100;
+      //  go.GetComponentInChildren<Camera>().farClipPlane = MaxDistanceToPlayer - 100;
     }
 
     public void SpawnAsteroids(int amount)
