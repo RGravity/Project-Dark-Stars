@@ -24,7 +24,6 @@ public class MineralScript : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        PlayerController playerController = other.GetComponent<PlayerController>();
 
 
         //if (playerController == null)
