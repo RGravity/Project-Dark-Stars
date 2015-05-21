@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour {
 
     //HP
     private bool _hit = false;
-    public int HP = 100;
+    public int HP = 20;
     public bool Hit { set { _hit = value; } }
 
     //Score
@@ -157,8 +157,13 @@ public class PlayerController : MonoBehaviour {
             Hit = false;
             if (HP <= 0)
             {
-                //Debug.Log("Your Killed");
+                GameObject.FindObjectOfType<YouFailScript>().YouDiedBool = true;
             }
         }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        _hit = true;
     }
 }
