@@ -1402,7 +1402,7 @@ MonoBehaviour:
   MaxDistanceToPlayer: 300
   AsteroidsList:
   - {fileID: 165476, guid: c9e25c6723ce4824baf26b242c040cbc, type: 2}
-  - {fileID: 149282, guid: e5da3fdce7bf0f0468f6c9c0e4b220ba, type: 2}
+  - {fileID: 152354, guid: e5da3fdce7bf0f0468f6c9c0e4b220ba, type: 2}
   - {fileID: 191358, guid: 8dd2b025349e51941a95f6941df604f4, type: 2}
   - {fileID: 164324, guid: 10aa9f9262d6e0348af8907e285a2e4c, type: 2}
   parentSpaceShipEnemies: {fileID: 1075670747}
