@@ -9,8 +9,8 @@ public class EnemyLaserScript : MonoBehaviour {
     private Transform parent;
     private float angle = 25;
     private string name = "";
-    private ParticleSystem laserParticle;
-    private ParticleSystem laserParticle2;
+    public ParticleSystem laserParticle;
+    public ParticleSystem laserParticle2;
 
 	// Use this for initialization
 	void Start () {
