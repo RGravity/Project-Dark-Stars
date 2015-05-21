@@ -1356,7 +1356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentSpaceShip: {fileID: 2101569825}
-  spaceShip: {fileID: 175060, guid: 0b074f5b36594094e866951ad96ab008, type: 2}
+  spaceShip: {fileID: 197824, guid: 0b074f5b36594094e866951ad96ab008, type: 2}
   parentAsteroids: {fileID: 1603612045}
   amountOfAsteroids: 100
   MinDistanceToPlayer: 30
