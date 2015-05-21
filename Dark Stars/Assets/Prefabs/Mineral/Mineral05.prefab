@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66c1cbb6e590d5f4e92e2632d9ff807f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreAmount: 1
+  scoreAmount: 5
   amountOfXenonite: 0
   amountOfHelionite: 0
   amountOfArgonite: 1

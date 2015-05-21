@@ -352,13 +352,13 @@ RectTransform:
   m_GameObject: {fileID: 907635777}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.7360754, y: .355900943, z: .569451869}
+  m_LocalScale: {x: 1.75708377, y: .355900943, z: .569451869}
   m_Children: []
   m_Father: {fileID: 1183799460}
   m_RootOrder: 6
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 118.300003, y: -219.100006}
+  m_AnchoredPosition: {x: 119.199997, y: -147.100006}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &907635779
@@ -379,7 +379,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: .638000011
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
 --- !u!222 &907635780
@@ -976,7 +976,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentSpaceShip: {fileID: 2101569825}
-  spaceShip: {fileID: 131750, guid: 13ccbd372f1c8ee4b8afee8d4fb4bc5c, type: 2}
+  spaceShip: {fileID: 188202, guid: 13ccbd372f1c8ee4b8afee8d4fb4bc5c, type: 2}
   parentAsteroids: {fileID: 1603612045}
   amountOfAsteroids: 100
   MinDistanceToPlayer: 30
@@ -989,9 +989,9 @@ MonoBehaviour:
   parentSpaceShipEnemies: {fileID: 1075670747}
   amountOfEnemies: 1
   enemySpaceshipsList:
-  - {fileID: 158798, guid: bfbf4d0b521c66649a2b8ea2ebe30f56, type: 2}
-  - {fileID: 136264, guid: 1eeea2f5bc9560948b41bbe252e0ccc5, type: 2}
-  - {fileID: 146876, guid: 1c88d55e52745004293f954fcfa6a4a2, type: 2}
+  - {fileID: 143532, guid: af9e55565cb1d854390a907797159542, type: 2}
+  - {fileID: 123102, guid: 963d1f2c3b78baf4f9193f9f459530b0, type: 2}
+  - {fileID: 151558, guid: baeca572618ea6b40b81735f35b5de00, type: 2}
   parentMinerals: {fileID: 1872095693}
   mineralsList:
   - {fileID: 117984, guid: 498e2f0dc824a6b46b2da5e136187823, type: 2}
