@@ -836,7 +836,7 @@ MonoBehaviour:
   maxSpeed: 200
   sensitivity: 750
   cameraOffset: {x: .00999999978, y: 9.51000023, z: -29.7099991}
-  HP: 20
+  HP: 100
 --- !u!114 &11462050
 =======
 --- !u!114 &11440864

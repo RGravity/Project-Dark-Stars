@@ -18,7 +18,6 @@ public class YouFailScript : MonoBehaviour {
 	void Update () {
         if (youDied)
         {
-            Debug.Log("You Died");
             Time.timeScale = 0;
             youDied = true;
             showGUI = true;

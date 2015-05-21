@@ -19,23 +19,23 @@ public class EnemyLaserScript : MonoBehaviour {
         target = GameObject.FindGameObjectWithTag("Player");
         parent = gameObject.transform.parent;
         name = gameObject.name;
-        //string EnemyID = name.Substring(name.Length - 1);
+        string EnemyID = name.Substring(name.Length - 1);
 
-        //ParticleSystem[] ParticleSystems = GameObject.FindObjectsOfType<ParticleSystem>();
-        //for (int i = 0; i < ParticleSystems.Length; i++)
-        //{
-        //    if (ParticleSystems[i].name.Contains(EnemyID))
-        //    {
-        //        if (ParticleSystems[i].name.Contains("Laser"))
-        //        {
-        //            laserParticle = ParticleSystems[i];
-        //        }
-        //        if (ParticleSystems[i].name.Contains("Core"))
-        //        {
-        //            laserParticle2 = ParticleSystems[i];
-        //        }
-        //    }
-        //}
+        ParticleSystem[] ParticleSystems = GameObject.FindObjectsOfType<ParticleSystem>();
+        for (int i = 0; i < ParticleSystems.Length; i++)
+        {
+            if (ParticleSystems[i].name.Contains(EnemyID))
+            {
+                if (ParticleSystems[i].name.Contains("Laser"))
+                {
+                    laserParticle = ParticleSystems[i];
+                }
+                if (ParticleSystems[i].name.Contains("Core"))
+                {
+                    laserParticle2 = ParticleSystems[i];
+                }
+            }
+        }
 	}
 	
 	// Update is called once per frame

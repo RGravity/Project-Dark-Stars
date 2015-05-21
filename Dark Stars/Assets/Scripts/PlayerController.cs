@@ -24,8 +24,8 @@ public class PlayerController : MonoBehaviour {
     public bool Hit { set { _hit = value; } }
 
     //damageScreen
-    private int _timer = 0;
-
+    private Color _damageScreenColor = GameObject.Find("DamageScreen").GetComponent<Image>().color;
+    private float _alphaIncrease = 255 / 100;
 
     //Score
     private int _score = 0;
@@ -73,7 +73,8 @@ public class PlayerController : MonoBehaviour {
 
     void Start()
     {
-        GameObject.Find("DamageScreen").GetComponent<Image>().enabled = false;
+        _damageScreenColor.a = 0;
+        GameObject.Find("DamageScreen").GetComponent<Image>().color = _damageScreenColor;
         speed = cruiseSpeed;
     }
 
@@ -82,11 +83,6 @@ public class PlayerController : MonoBehaviour {
         //Do all the stuff
         Movement();
         CheckHit();
-        _timer--;
-        if (_timer >= 0 && GameObject.Find("DamageScreen").GetComponent<Image>().enabled == true)
-        {
-            GameObject.Find("DamageScreen").GetComponent<Image>().enabled = false;
-        }
     }
 
     void Movement()
@@ -163,11 +159,10 @@ public class PlayerController : MonoBehaviour {
     {
         if (_hit)
         {
-            Debug.Log(HP);
             HP--;
 
-            GameObject.Find("DamageScreen").GetComponent<Image>().enabled = true;
-            _timer = 705;
+            _damageScreenColor.a += _alphaIncrease;
+            GameObject.Find("DamageScreen").GetComponent<Image>().color = _damageScreenColor;
 
             Hit = false;
             if (HP <= 0)
