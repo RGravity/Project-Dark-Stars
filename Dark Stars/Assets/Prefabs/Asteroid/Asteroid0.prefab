@@ -119,8 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e2d98f0db8978c4fb4da054cb04c9cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 50
-  mineral: {fileID: 11423580, guid: 498e2f0dc824a6b46b2da5e136187823, type: 2}
+  HP: 25
   MaxInterval: 160
 --- !u!1001 &100100000
 Prefab:

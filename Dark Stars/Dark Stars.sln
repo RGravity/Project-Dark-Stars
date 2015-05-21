@@ -1,6 +1,8 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
+Project("{8BEE2792-8C6F-AFA2-A427-907F4C3837F7}") = "Dark Stars", "Assembly-CSharp-firstpass.csproj", "{CB3659DF-80AA-95B9-4ADB-1F7036B239A1}"
+EndProject
 Project("{8BEE2792-8C6F-AFA2-A427-907F4C3837F7}") = "Dark Stars", "Assembly-CSharp.csproj", "{6E1881A2-AB94-012A-6D31-2E736A36E30F}"
 EndProject
 Global
@@ -9,6 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CB3659DF-80AA-95B9-4ADB-1F7036B239A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB3659DF-80AA-95B9-4ADB-1F7036B239A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB3659DF-80AA-95B9-4ADB-1F7036B239A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB3659DF-80AA-95B9-4ADB-1F7036B239A1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6E1881A2-AB94-012A-6D31-2E736A36E30F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6E1881A2-AB94-012A-6D31-2E736A36E30F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E1881A2-AB94-012A-6D31-2E736A36E30F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -17,7 +23,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																																				GlobalSection(MonoDevelopProperties) = preSolution
+																																																						GlobalSection(MonoDevelopProperties) = preSolution
 =======
 																																										GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> origin/master
