@@ -164,7 +164,6 @@ public class PlayerController : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision)
     {
-        //DAFUQ?
         _hit = true;
     }
 }
