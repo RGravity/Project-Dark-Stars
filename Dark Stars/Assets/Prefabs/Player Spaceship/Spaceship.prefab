@@ -915,7 +915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f290bd93cac4be044b0b7f8f5e57a498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LaserDistance: 50
+  LaserDistance: 150
   MaxEnergy: 200
 --- !u!120 &12038426
 LineRenderer:
