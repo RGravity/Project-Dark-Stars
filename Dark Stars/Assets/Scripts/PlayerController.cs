@@ -86,6 +86,11 @@ public class PlayerController : MonoBehaviour {
         //Do all the stuff
         Movement();
         CheckHit();
+
+        if (cristalFillImage.fillAmount >= 0.98)
+        {
+            gameWon();
+        }
     }
 
     void Movement()
@@ -183,5 +188,21 @@ public class PlayerController : MonoBehaviour {
                 _timer = 72;
             }
         }
+    }
+
+    void gameWon()
+    {
+        ScoreData scoreData = GameObject.FindObjectOfType<ScoreData>();
+
+        scoreData.Xenonite = _amountOfXenonite;
+        scoreData.Helionite = _amountOfHelionite;
+        scoreData.Argonite = _amountOfArgonite;
+        scoreData.Neonite = _amountOfNeonite;
+
+        scoreData.Speeder = _amountOfKilledSpeeders;
+        scoreData.Assailant = _amountOfKilledAssailants;
+        scoreData.Bruiser = _amountOfKilledBruisers;
+
+        Application.LoadLevel("Victory");
     }
 }
