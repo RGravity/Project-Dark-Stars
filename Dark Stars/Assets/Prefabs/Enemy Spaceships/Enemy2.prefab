@@ -901,7 +901,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Shiptype: 2
-  target: {fileID: 147768, guid: 13ccbd372f1c8ee4b8afee8d4fb4bc5c, type: 2}
+  target: {fileID: 188202, guid: 13ccbd372f1c8ee4b8afee8d4fb4bc5c, type: 2}
   EnemySpeed: 25
   HP: 250
 --- !u!114 &11486362
@@ -916,6 +916,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LaserDistance: 50
+  laserParticle: {fileID: 19817230}
+  laserParticle2: {fileID: 19856026}
 --- !u!120 &12049006
 LineRenderer:
   m_ObjectHideFlags: 1
