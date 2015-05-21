@@ -902,8 +902,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Shiptype: 2
   target: {fileID: 197824, guid: 0b074f5b36594094e866951ad96ab008, type: 2}
-  EnemySpeed: 25
-  HP: 60
+  EnemySpeed: 7
+  HP: 40
 --- !u!114 &11425592
 MonoBehaviour:
   m_ObjectHideFlags: 1

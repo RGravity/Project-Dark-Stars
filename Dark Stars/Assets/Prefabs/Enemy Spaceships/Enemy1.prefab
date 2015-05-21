@@ -796,10 +796,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f38b491bd809fd479b25122d819daea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Shiptype: 0
+  Shiptype: 1
   target: {fileID: 197824, guid: 0b074f5b36594094e866951ad96ab008, type: 2}
-  EnemySpeed: 25
-  HP: 40
+  EnemySpeed: 10
+  HP: 30
 --- !u!120 &12026854
 LineRenderer:
   m_ObjectHideFlags: 1

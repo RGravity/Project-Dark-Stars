@@ -504,8 +504,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Shiptype: 0
   target: {fileID: 197824, guid: 0b074f5b36594094e866951ad96ab008, type: 2}
-  EnemySpeed: 50
-  HP: 40
+  EnemySpeed: 15
+  HP: 20
 --- !u!114 &11418218
 MonoBehaviour:
   m_ObjectHideFlags: 1
