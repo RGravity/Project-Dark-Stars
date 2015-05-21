@@ -26,8 +26,9 @@ public class MineralScript : MonoBehaviour
     {
         PlayerController playerController = other.GetComponent<PlayerController>();
 
-        if (playerController == null)
-            return;
+
+        //if (playerController == null)
+            //return;
 
         playerController.Score += scoreAmount;
         playerController.AmountOfXenonite += amountOfXenonite;
