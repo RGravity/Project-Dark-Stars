@@ -25,9 +25,9 @@ GameObject:
   - 4: {fileID: 410574}
   - 33: {fileID: 3319792}
   - 23: {fileID: 2372570}
-  - 64: {fileID: 6413592}
   - 95: {fileID: 9595186}
   - 114: {fileID: 11432220}
+  - 65: {fileID: 6542122}
   m_Layer: 0
   m_Name: Mineral3
   m_TagString: Untagged
@@ -54,8 +54,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 134538}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 84.8799973}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -17.5100002, y: 3.73000002, z: 84.8799973}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 410574}
   m_Father: {fileID: 0}
@@ -91,18 +91,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 168060}
   m_Mesh: {fileID: 4300000, guid: 627e620d6238ac9408e27a0af1bf3df9, type: 3}
---- !u!64 &6413592
-MeshCollider:
+--- !u!65 &6542122
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 168060}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 1
-  m_Mesh: {fileID: 4300000, guid: 627e620d6238ac9408e27a0af1bf3df9, type: 3}
+  m_Size: {x: 7.5, y: 11.2700005, z: 7.5}
+  m_Center: {x: -.00368126482, y: 2.0145278, z: -3.81469727e-06}
 --- !u!95 &9595186
 Animator:
   serializedVersion: 3

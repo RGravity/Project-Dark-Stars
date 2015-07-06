@@ -10,9 +10,9 @@ GameObject:
   - 4: {fileID: 420652}
   - 33: {fileID: 3314898}
   - 23: {fileID: 2357164}
-  - 64: {fileID: 6437712}
   - 95: {fileID: 9596448}
   - 114: {fileID: 11477954}
+  - 65: {fileID: 6569448}
   m_Layer: 0
   m_Name: Mineral1
   m_TagString: Untagged
@@ -42,8 +42,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 166470}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 49.7000008, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -.150000006, y: 0, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 420652}
   m_Father: {fileID: 0}
@@ -91,8 +91,8 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 136470}
   m_Mesh: {fileID: 4300000, guid: 4625d026d610dd64192c6ac564a6afa4, type: 3}
---- !u!64 &6437712
-MeshCollider:
+--- !u!65 &6569448
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -101,8 +101,8 @@ MeshCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 1
-  m_Mesh: {fileID: 4300000, guid: 4625d026d610dd64192c6ac564a6afa4, type: 3}
+  m_Size: {x: 1345.5, y: 1245.59998, z: 1345.5}
+  m_Center: {x: -.44739151, y: 170.022049, z: -2.56883621}
 --- !u!95 &9596448
 Animator:
   serializedVersion: 3
