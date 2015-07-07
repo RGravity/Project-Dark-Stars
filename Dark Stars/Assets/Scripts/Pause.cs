@@ -11,7 +11,7 @@ public class Pause : MonoBehaviour
 
     void Update()
     {
-        if (GameObject.FindObjectOfType<YouFailScript>().YouDiedBool)
+        if (!GameObject.FindObjectOfType<YouFailScript>().YouDiedBool)
         {
             if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button7))
             {
