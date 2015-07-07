@@ -5,7 +5,7 @@ public class EnemyLaserScript : MonoBehaviour {
 
     LineRenderer line;
     public int LaserDistance = 50;
-    private GameObject target;
+    public GameObject target;
     private Transform parent;
     private float angle = 25;
     private string name = "";
@@ -14,7 +14,6 @@ public class EnemyLaserScript : MonoBehaviour {
 	void Start () {
         line = gameObject.GetComponent<LineRenderer>();
         line.enabled = false;
-        target = GameObject.FindGameObjectWithTag("Player");
         parent = gameObject.transform.parent;
         name = gameObject.name;
         
