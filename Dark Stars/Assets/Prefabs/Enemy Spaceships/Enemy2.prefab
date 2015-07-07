@@ -856,6 +856,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LaserDistance: 50
+  target: {fileID: 197824, guid: 0b074f5b36594094e866951ad96ab008, type: 2}
 --- !u!120 &12065640
 LineRenderer:
   m_ObjectHideFlags: 1
