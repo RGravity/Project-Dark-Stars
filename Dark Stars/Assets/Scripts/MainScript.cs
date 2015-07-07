@@ -74,6 +74,7 @@ public class MainScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        GameObject.FindObjectOfType<Pause>().PauseGame = false;
         SpawnPlayerShip();
         //SpawnAsteroids(amountOfAsteroids);
         //SpawnRandomEnemyShips(amountOfEnemies);
