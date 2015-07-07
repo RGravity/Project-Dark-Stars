@@ -74,8 +74,7 @@ public class MainScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Input.GetKeyDown(KeyCode.Escape);
-        Input.GetKeyDown(KeyCode.Joystick1Button7);
+        GameObject.FindObjectOfType<Pause>().PauseGame = false;
         SpawnPlayerShip();
         //SpawnAsteroids(amountOfAsteroids);
         //SpawnRandomEnemyShips(amountOfEnemies);

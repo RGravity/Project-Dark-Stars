@@ -13,6 +13,8 @@ public class Pause : MonoBehaviour
     public bool allowUnpause = false;
     private bool showGUI = false;
 
+    public bool PauseGame { get { return pauseGame; } set { pauseGame = value; } }
+
     void Start()
     {
         ResumeArrow = GameObject.Find("ResumeArrow").GetComponent<Image>();

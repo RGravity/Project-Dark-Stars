@@ -24,7 +24,6 @@ public class MineralScript : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("I am here");
         if (other.gameObject.GetComponent<PlayerController>())
         {
             PlayerController playerController = other.gameObject.GetComponent<PlayerController>();
