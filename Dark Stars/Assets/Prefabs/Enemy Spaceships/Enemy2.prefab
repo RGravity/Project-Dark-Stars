@@ -856,8 +856,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LaserDistance: 50
-  laserParticle: {fileID: 0}
-  laserParticle2: {fileID: 0}
 --- !u!120 &12065640
 LineRenderer:
   m_ObjectHideFlags: 1
