@@ -66,6 +66,7 @@ public class Pause : MonoBehaviour
 
             if (Input.GetAxis("Vertical") < -0.5f && selectionAllowed)
             {
+                
                 selectionAllowed = false;
 
                 if (ResumeArrow.enabled == true)

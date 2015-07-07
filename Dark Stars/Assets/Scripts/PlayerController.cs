@@ -79,6 +79,7 @@ public class PlayerController : MonoBehaviour {
         _damageScreenColor = GameObject.Find("DamageScreen").GetComponent<Image>().color;
         speed = cruiseSpeed;
         GameObject.Find("DamageScreen").GetComponent<Image>().enabled = false;
+        GameObject.Find("HealthCounter").GetComponent<Text>().text = HP.ToString();
     }
 
     void FixedUpdate()
@@ -168,6 +169,7 @@ public class PlayerController : MonoBehaviour {
         if (_hit)
         {
             HP--;
+            GameObject.Find("HealthCounter").GetComponent<Text>().text = HP.ToString();
 
             _showDamage = true;
             GameObject.Find("DamageScreen").GetComponent<Image>().enabled = true;

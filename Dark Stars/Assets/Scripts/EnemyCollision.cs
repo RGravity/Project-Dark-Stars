@@ -7,6 +7,7 @@ public class EnemyCollision : MonoBehaviour {
     {
         if (other.gameObject.GetComponentInChildren<PlayerController>())
         {
+            Debug.Log("SUCCESS");
             GameObject.FindObjectOfType<PlayerController>().Hit = true;
         }
     }
