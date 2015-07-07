@@ -9,15 +9,11 @@ public class MiningLaserScript : MonoBehaviour {
     public int MaxEnergy = 200;
     private bool releasedButton = false;
     private int energy = 200;
-    private ParticleSystem laserParticle;
-    private ParticleSystem laserParticle2;
 
 	// Use this for initialization
 	void Start () {
         line = gameObject.GetComponent<LineRenderer>();
         line.enabled = false;
-        laserParticle = GameObject.Find("Laser Player").GetComponent<ParticleSystem>();
-        laserParticle2 = GameObject.Find("Core Player").GetComponent<ParticleSystem>();
 	}
 	
 	// Update is called once per frame
@@ -56,8 +52,6 @@ public class MiningLaserScript : MonoBehaviour {
 
         while (Input.GetButton("Fire1") && allowShoot)
         {
-            laserParticle.Play();
-            laserParticle2.Play();
             Ray ray = new Ray(transform.position, transform.forward);
             RaycastHit hit;
 
@@ -89,10 +83,6 @@ public class MiningLaserScript : MonoBehaviour {
             {
                 allowShoot = false; 
             }
-            if (laserParticle.isPlaying)
-                laserParticle.Stop();
-            if (laserParticle2.isPlaying)
-                laserParticle2.Stop();
 
             yield return null;
         }
