@@ -9,8 +9,6 @@ public class EnemyLaserScript : MonoBehaviour {
     private Transform parent;
     private float angle = 25;
     private string name = "";
-    public ParticleSystem laserParticle;
-    public ParticleSystem laserParticle2;
 
 	// Use this for initialization
 	void Start () {
@@ -41,8 +39,6 @@ public class EnemyLaserScript : MonoBehaviour {
         float distance = Vector3.Distance(target.transform.position, parent.position);
         while (distance < LaserDistance && (Vector3.Angle(transform.forward, target.transform.position - transform.position) < angle))
         {
-            laserParticle.Play();
-            laserParticle2.Play();
             Vector3 GunTip = GameObject.Find("GunTip Point").transform.position;
             gameObject.GetComponent<LineRenderer>().useWorldSpace = true;
             Ray ray = new Ray(GunTip, transform.forward);
@@ -75,8 +71,6 @@ public class EnemyLaserScript : MonoBehaviour {
             distance = Vector3.Distance(target.transform.position, parent.position);
             yield return null;
         }
-        laserParticle.Stop();
-        laserParticle2.Stop();
         line.enabled = false;
         gameObject.GetComponent<LineRenderer>().useWorldSpace = false;
     }

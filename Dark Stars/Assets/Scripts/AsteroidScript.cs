@@ -69,7 +69,7 @@ public class AsteroidScript : MonoBehaviour {
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.collider.gameObject.tag == "Hit")
+        if (other.gameObject.GetComponentInChildren<PlayerController>())
         {
             GameObject.FindObjectOfType<PlayerController>().Hit = true; 
         }

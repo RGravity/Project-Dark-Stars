@@ -27,9 +27,11 @@ public class LevelEditorMain : MonoBehaviour {
         {
             if (_nextlevelToLoad)
             {
-                LevelScript.levels(level);
                 level++;
                 _nextlevelToLoad = false;
+                LevelScript.levels(1);
+                
+                
             }
         }
 	}
