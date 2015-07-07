@@ -12,4 +12,12 @@ public class LoadOnClick : MonoBehaviour {
     {
         Application.Quit();
     }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.Joystick1Button6))
+        {
+            Application.LoadLevel(0);
+        }
+    }
 }
