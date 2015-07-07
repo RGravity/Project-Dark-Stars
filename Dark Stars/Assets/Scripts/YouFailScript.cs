@@ -7,7 +7,7 @@ public class YouFailScript : MonoBehaviour {
     private bool youDied = false;
     private bool showGUI = false;
 
-    public bool YouDiedBool { set { youDied = value; } }
+    public bool YouDiedBool { get { return youDied; } set { youDied = value; } }
 
 	// Use this for initialization
 	void Start () {
