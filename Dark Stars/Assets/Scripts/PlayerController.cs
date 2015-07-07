@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour {
 
     //HP
     private bool _hit = false;
-    public int HP = 20;
+    public int HP = 10;
     public bool Hit { set { _hit = value; } }
 
     //damageScreen

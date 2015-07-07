@@ -24,19 +24,19 @@ public class MineralScript : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        PlayerController playerController = GameObject.FindObjectOfType<PlayerController>();
+        Debug.Log("I am here");
+        if (other.gameObject.GetComponent<PlayerController>())
+        {
+            PlayerController playerController = other.gameObject.GetComponent<PlayerController>();
 
+            playerController.Score += scoreAmount;
+            playerController.AmountOfXenonite += amountOfXenonite;
+            playerController.AmountOfHelionite += amountOfHelionite;
+            playerController.AmountOfArgonite += amountOfArgonite;
+            playerController.AmountOfNeonite += amountOfNeonite;
+            playerController.AmountCrystalFill += cristalAmount;
 
-        //if (playerController == null)
-            //return;
-
-        playerController.Score += scoreAmount;
-        playerController.AmountOfXenonite += amountOfXenonite;
-        playerController.AmountOfHelionite += amountOfHelionite;
-        playerController.AmountOfArgonite += amountOfArgonite;
-        playerController.AmountOfNeonite += amountOfNeonite;
-        playerController.AmountCrystalFill += cristalAmount;
-
-        Destroy(gameObject);
+            Destroy(gameObject); 
+        }
     }
 }

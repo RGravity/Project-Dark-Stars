@@ -6,9 +6,9 @@ public class MiningLaserScript : MonoBehaviour {
     LineRenderer line;
     public int LaserDistance = 100;
     private bool allowShoot = true;
-    public int MaxEnergy = 200;
+    public int MaxEnergy = 50;
     private bool releasedButton = false;
-    private int energy = 200;
+    private int energy = 50;
 
 	// Use this for initialization
 	void Start () {
@@ -37,7 +37,7 @@ public class MiningLaserScript : MonoBehaviour {
         {
             StopCoroutine("FireLaser");
             line.enabled = false;
-            energy += 2;
+            energy += 4;
             if (energy > MaxEnergy)
             {
                 energy = MaxEnergy;
