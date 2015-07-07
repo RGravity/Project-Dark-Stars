@@ -799,7 +799,7 @@ MonoBehaviour:
   maxSpeed: 200
   sensitivity: 750
   cameraOffset: {x: .00999999978, y: 6.51000023, z: -29.7099991}
-  HP: 10
+  HP: 1
 --- !u!114 &11420160
 MonoBehaviour:
   m_ObjectHideFlags: 1
