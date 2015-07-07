@@ -28,6 +28,7 @@ GameObject:
   - 95: {fileID: 9516372}
   - 114: {fileID: 11492204}
   - 65: {fileID: 6570002}
+  - 54: {fileID: 5445552}
   m_Layer: 0
   m_Name: Mineral0
   m_TagString: Untagged
@@ -91,6 +92,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 173992}
   m_Mesh: {fileID: 4300000, guid: 99f22eebe484508449556d6f759b0fc6, type: 3}
+--- !u!54 &5445552
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 173992}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &6570002
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -101,7 +117,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6.44000006, y: 6.05000019, z: 6.44000006}
+  m_Size: {x: 4.71000004, y: 3.80999994, z: 4.71000004}
   m_Center: {x: -.011227414, y: .866603613, z: -.0120349377}
 --- !u!95 &9516372
 Animator:
@@ -136,7 +152,7 @@ MonoBehaviour:
   amountOfHelionite: 0
   amountOfArgonite: 0
   amountOfNeonite: 0
-  cristalAmount: 0
+  cristalAmount: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

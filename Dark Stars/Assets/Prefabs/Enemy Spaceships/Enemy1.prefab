@@ -738,8 +738,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LaserDistance: 75
-  laserParticle: {fileID: 0}
-  laserParticle2: {fileID: 0}
 --- !u!120 &12002940
 LineRenderer:
   m_ObjectHideFlags: 1
@@ -768,8 +766,8 @@ LineRenderer:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 1}
   m_Parameters:
-    startWidth: .100000001
-    endWidth: .100000001
+    startWidth: 1
+    endWidth: 1
     m_StartColor:
       serializedVersion: 2
       rgba: 4278190335
